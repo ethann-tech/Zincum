@@ -6,6 +6,7 @@ plugins {
 android {
     namespace 'com.ethan.view.kit'
     compileSdk 33
+    buildFeatures.viewBinding true
     defaultConfig {
         minSdk 21
         targetSdk 33

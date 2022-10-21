@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="get_verification_code">获取验证码</string>
+    <string name="reacquire">重新获取</string>
+    <string name="reacquire_count_down">重新获取%1$s</string>
+</resources>

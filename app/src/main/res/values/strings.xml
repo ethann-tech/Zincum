@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Zincum</string>
+    <string name="hint_verification_code_not_empty">验证码不能为空</string>
+    <string name="get_verification_code">Get Code</string>
+    <string name="reacquire">reacquire</string>
+    <string name="reacquire_count_down">reacquire%1$s</string>
 </resources>
