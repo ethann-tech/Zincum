@@ -20,7 +20,9 @@ class ActivityVerificationCode:AppCompatActivity() {
         mBinding.includeLayoutToolbar.toolbar.setNavigationIcon(R.drawable.nav_back)
         mBinding.includeLayoutToolbar.toolbar.title = "验证码输入框"
         mBinding.includeLayoutToolbar.toolbar.setTitleTextColor(ResourcesCompat.getColor(resources, R.color.white, null))
-
+        mBinding.includeLayoutToolbar.toolbar.setNavigationOnClickListener {
+            finish()
+        }
         //输入完成监听
         mBinding.verificationEdit.inputCount =6
         mBinding.verificationEdit.setOnEditCompleteListener(object :
