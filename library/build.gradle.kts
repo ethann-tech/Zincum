@@ -2,6 +2,7 @@ plugins {
     id ("com.android.library")
     id ("org.jetbrains.kotlin.android")
     id("kotlin-kapt")
+    id("maven-publish")
 }
 
 android {
@@ -37,4 +38,15 @@ dependencies {
     implementation(libs.androidx.core)
     implementation(libs.androidx.material)
 
+}
+afterEvaluate {
+    publishing{
+        publications {
+           register<MavenPublication>("release") {
+                groupId = "com.github.ethann-tech"
+                artifactId = "Zincum"
+                version = "1.0.0"
+            }
+        }
+    }
 }
