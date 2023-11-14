@@ -1,4 +1,4 @@
-package com.ethan.demo
+package com.ethan.demo.activity
 
 import android.content.Context
 import android.content.Intent

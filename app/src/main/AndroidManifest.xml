@@ -26,10 +26,10 @@
         </activity>
 
         <activity
-            android:name=".ActivityStepNavBar"
+            android:name=".activity.ActivityStepNavBar"
             android:exported="false" />
         <activity
-            android:name=".ActivityResendMsg"
+            android:name=".activity.ActivityResendMsg"
             android:exported="false" />
         <activity
             android:name=".activity.ActivityVerificationCode"
@@ -47,6 +47,7 @@
         <activity
             android:name=".activity.ActivityDeviceInfo"
             android:exported="true" />
+        <activity android:name=".activity.ActivityLoading" android:exported="false" />
     </application>
 
 </manifest>

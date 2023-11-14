@@ -8,7 +8,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ethan.flexibleddivider.HorizontalDividerItemDecoration
-import com.ethan.demo.activity.ActivityDeviceInfo
+import com.ethan.demo.activity.ActivityLoading
+import com.ethan.demo.activity.ActivityResendMsg
+import com.ethan.demo.activity.ActivityStepNavBar
 import com.ethan.demo.activity.ActivityStickyHome
 import com.ethan.demo.activity.ActivityTimeUtil
 import com.ethan.demo.activity.ActivityVerificationCode
@@ -19,7 +21,7 @@ import io.github.uhsk.kit.dp2px
 
 class MainActivity : AppCompatActivity() {
     private lateinit var mBinding: ActivityMainBinding
-    private val items = arrayOf("StepNavigateBar", "倒计时", "短信验证码输入框", "时间工具类","吸顶效果")
+    private val items = arrayOf("StepNavigateBar", "倒计时", "短信验证码输入框", "时间工具类", "吸顶效果", "Loading")
     private val mainAdapter by lazy { MainAdapter() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,11 +34,7 @@ class MainActivity : AppCompatActivity() {
         mBinding.recyclerView.apply {
             layoutManager = LinearLayoutManager(mBinding.root.context)
             addItemDecoration(
-                HorizontalDividerItemDecoration.Builder(mBinding.recyclerView.context)
-                    .color(Color.LTGRAY)
-                    .margin(baseContext.dp2px(16), 0)
-                    .size(1)
-                    .build()
+                HorizontalDividerItemDecoration.Builder(mBinding.recyclerView.context).color(Color.LTGRAY).margin(baseContext.dp2px(16), 0).size(1).build()
             )
         }
         mainAdapter.setOnItemClickListener { _, view, position ->
@@ -44,8 +42,9 @@ class MainActivity : AppCompatActivity() {
                 0 -> ActivityStepNavBar.jump(view.context)
                 1 -> ActivityResendMsg.jump(view.context)
                 2 -> ActivityVerificationCode.jump(view.context)
-                3-> ActivityTimeUtil.jump(view.context)
-                4-> ActivityStickyHome.jump(view.context)
+                3 -> ActivityTimeUtil.jump(view.context)
+                4 -> ActivityStickyHome.jump(view.context)
+                5 -> ActivityLoading.jump(view.context)
             }
         }
         mBinding.recyclerView.adapter = mainAdapter
@@ -58,9 +57,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item.itemId){
-            R.id.menu_device_info ->{
-                ActivityBase.jump(this, ActivityDeviceInfo::class.java)
+        when (item.itemId) {
+            R.id.menu_device_info -> {
+                ActivityBase.jump(baseContext)
             }
         }
         return super.onOptionsItemSelected(item)

@@ -1,4 +1,4 @@
-package com.ethan.demo
+package com.ethan.demo.activity
 
 import android.content.Context
 import android.content.Intent
@@ -6,6 +6,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.res.ResourcesCompat
 import androidx.viewpager2.widget.ViewPager2
+import com.ethan.demo.R
 import com.ethan.demo.adapter.ViewPagerAdapter
 
 import com.ethan.demo.databinding.ActivityStepNavBarBinding
