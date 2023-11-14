@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".activity.ActivityVerificationCode">
 
     <include
         android:id="@+id/include_layout_toolbar"
@@ -14,7 +14,7 @@
 
 
 
-    <com.ethan.view.kit.widget.VerificationCodeEditText
+    <com.ethan.zincum.widget.VerificationCodeEditText
         android:id="@+id/verificationEdit"
         android:layout_width="250dp"
         android:layout_height="60dp"
@@ -31,7 +31,7 @@
         app:space="16dp"
         app:textBackground="@drawable/verification_bg_line" />
 
-    <com.ethan.view.kit.widget.VerificationCodeEditText
+    <com.ethan.zincum.widget.VerificationCodeEditText
         android:layout_width="250dp"
         android:layout_height="60dp"
         android:layout_marginTop="20dp"

@@ -4,4 +4,6 @@
     <string name="get_verification_code">Get Code</string>
     <string name="reacquire">reacquire</string>
     <string name="reacquire_count_down">reacquire%1$s</string>
+    <string name="menu_device_info">设备信息</string>
+    <string name="content_description">""</string>
 </resources>
