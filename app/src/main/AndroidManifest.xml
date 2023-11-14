@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -21,12 +22,32 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
+
         </activity>
 
-        <activity android:name=".ActivityStepNavBar" android:exported="false"/>
+        <activity
+            android:name=".activity.ActivityStepNavBar"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ActivityResendMsg"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ActivityVerificationCode"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ActivityTimeUtil"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ActivityStickyHome"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ActivitySticky"
+            android:exported="false" />
+        <!-- 设备信息-->
+        <activity
+            android:name=".activity.ActivityDeviceInfo"
+            android:exported="true" />
+        <activity android:name=".activity.ActivityLoading" android:exported="false" />
     </application>
 
 </manifest>
