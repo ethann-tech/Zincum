@@ -2,7 +2,7 @@ plugins {
     id ("com.android.library")
     id ("org.jetbrains.kotlin.android")
     id("kotlin-kapt")
-    //id("maven-publish")
+    id("maven-publish")
 }
 
 android {
@@ -45,14 +45,16 @@ dependencies {
     androidTestImplementation(libs.test.android.espresso)
 
 }
-//afterEvaluate {
-//    publishing{
-//        publications {
-//           register<MavenPublication>("debug") {
-//                groupId = "com.github.ethann-tech"
-//                artifactId = "Zincum"
-//                version = "0.0.3"
-//            }
-//        }
-//    }
-//}
+afterEvaluate {
+    publishing{
+        publications {
+           create<MavenPublication>("release") {
+                groupId = "com.github.ethann-tech"
+                artifactId = "Zincum"
+                version = "0.0.3"
+                from(components["release"])
+            }
+
+        }
+    }
+}
