@@ -4,7 +4,6 @@ pluginManagement {
         google()
         mavenCentral()
         maven { url = uri(path = "https://www.jitpack.io") }
-
     }
 }
 dependencyResolutionManagement {
