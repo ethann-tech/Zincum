@@ -2,8 +2,8 @@
 compileSdk = "34"
 minSdk = "21"
 targetSdk = "34"
-versionCode = "4"
-versionName = "0.0.4"
+versionCode = "1"
+versionName = "0.0.1"
 packageNameApp = "com.ethan.demo"
 packageNameLibrary = "com.ethan.zincum"
 

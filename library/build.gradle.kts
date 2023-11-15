@@ -13,10 +13,6 @@ android {
     }
 
     buildTypes {
-        debug {
-            isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-        }
         release {
             isMinifyEnabled = false
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
@@ -51,7 +47,7 @@ afterEvaluate {
            create<MavenPublication>("release") {
                 groupId = "com.github.ethann-tech"
                 artifactId = "Zincum"
-                version = "0.0.3"
+                version = "1.0.0"
                 from(components["release"])
             }
 
