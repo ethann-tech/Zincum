@@ -38,7 +38,7 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.core)
     implementation(libs.androidx.material)
-    implementation(project(":library"))
+
     testImplementation(libs.test.junit)
     androidTestImplementation(libs.test.android.ext)
     androidTestImplementation(libs.test.android.espresso)
@@ -48,5 +48,6 @@ dependencies {
     implementation(libs.kotlin.android.extension)
     implementation(libs.androidx.viewpage2)
     implementation(libs.flowhelper)
+    implementation(project(":library"))
 
 }

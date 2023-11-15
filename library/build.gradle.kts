@@ -2,7 +2,7 @@ plugins {
     id ("com.android.library")
     id ("org.jetbrains.kotlin.android")
     id("kotlin-kapt")
-    id("maven-publish")
+    //id("maven-publish")
 }
 
 android {
@@ -13,6 +13,10 @@ android {
     }
 
     buildTypes {
+        debug {
+            isMinifyEnabled = false
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+        }
         release {
             isMinifyEnabled = false
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
@@ -36,16 +40,19 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.core)
     implementation(libs.androidx.material)
+    testImplementation(libs.test.junit)
+    androidTestImplementation(libs.test.android.ext)
+    androidTestImplementation(libs.test.android.espresso)
 
 }
-afterEvaluate {
-    publishing{
-        publications {
-           register<MavenPublication>("release") {
-                groupId = "com.github.ethann-tech"
-                artifactId = "Zincum"
-                version = "0.0.3"
-            }
-        }
-    }
-}
+//afterEvaluate {
+//    publishing{
+//        publications {
+//           register<MavenPublication>("debug") {
+//                groupId = "com.github.ethann-tech"
+//                artifactId = "Zincum"
+//                version = "0.0.3"
+//            }
+//        }
+//    }
+//}
