@@ -8,7 +8,6 @@ plugins {
 android {
     namespace =libs.versions.packageNameLibrary.get()
     compileSdk =libs.versions.compileSdk.get().toInt()
-
     defaultConfig {
         minSdk = libs.versions.minSdk.get().toInt()
     }
@@ -16,7 +15,7 @@ android {
     buildTypes {
         release {
             isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            //proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
 
     }
@@ -45,7 +44,7 @@ afterEvaluate {
            register<MavenPublication>("release") {
                 groupId = "com.github.ethann-tech"
                 artifactId = "Zincum"
-                version = "1.0.0"
+                version = "0.0.3"
             }
         }
     }
