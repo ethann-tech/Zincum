@@ -8,9 +8,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.Window
 import android.widget.TextView
+import androidx.annotation.Keep
 import androidx.fragment.app.DialogFragment
 import com.ethan.zincum.R
-
+@Keep
 class IOSLoadingDialog : DialogFragment(), DialogInterface.OnKeyListener {
     /**
      * 默认点击外面无效
