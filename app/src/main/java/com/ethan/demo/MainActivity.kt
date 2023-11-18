@@ -8,20 +8,21 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ethan.flexibleddivider.HorizontalDividerItemDecoration
-import com.ethan.demo.activity.ActivityLoading
-import com.ethan.demo.activity.ActivityResendMsg
-import com.ethan.demo.activity.ActivityStepNavBar
-import com.ethan.demo.activity.ActivityStickyHome
-import com.ethan.demo.activity.ActivityTimeUtil
-import com.ethan.demo.activity.ActivityVerificationCode
+import com.ethan.demo.ui.activity.ActivityLoading
+import com.ethan.demo.ui.activity.ActivityResendMsg
+import com.ethan.demo.ui.activity.ActivityStepNavBar
+import com.ethan.demo.ui.activity.ActivityStickyHome
+import com.ethan.demo.ui.activity.ActivityTimeUtil
+import com.ethan.demo.ui.activity.ActivityVerificationCode
 import com.ethan.demo.adapter.MainAdapter
 import com.ethan.demo.base.ActivityBase
 import com.ethan.demo.databinding.ActivityMainBinding
+import com.ethan.demo.ui.activity.ActivityTest
 import io.github.uhsk.kit.dp2px
 
 class MainActivity : AppCompatActivity() {
     private lateinit var mBinding: ActivityMainBinding
-    private val items = arrayOf("StepNavigateBar", "倒计时", "短信验证码输入框", "时间工具类", "吸顶效果", "Loading","自定义View")
+    private val items = arrayOf("StepNavigateBar", "倒计时", "短信验证码输入框", "时间工具类", "吸顶效果", "Loading", "自定义View", "TestFragment")
     private val mainAdapter by lazy { MainAdapter() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,6 +46,7 @@ class MainActivity : AppCompatActivity() {
                 3 -> ActivityTimeUtil.jump(view.context)
                 4 -> ActivityStickyHome.jump(view.context)
                 5 -> ActivityLoading.jump(view.context)
+                6 -> ActivityTest.jump(view.context)
             }
         }
         mBinding.recyclerView.adapter = mainAdapter

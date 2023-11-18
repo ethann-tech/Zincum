@@ -3,7 +3,7 @@ package com.ethan.demo.base
 import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
-import com.ethan.demo.activity.ActivityStepNavBar
+import com.ethan.demo.ui.activity.ActivityStepNavBar
 
 open class ActivityBase : AppCompatActivity() {
     companion object {
