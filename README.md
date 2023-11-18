@@ -1,3 +1,5 @@
+[![](https://jitpack.io/v/ethann-tech/Zincum.svg)](https://jitpack.io/#ethann-tech/Zincum)
+
 ### 项目名称
 
 【Zincum】是化学元素周期表中第三十位元素，中文名为《锌》,以此作为项目名称的目的就是懒得起名子
@@ -26,7 +28,7 @@
 ```kotlin
 
 dependencies {
-    implementation('com.github.ethann-tech:Zincum:[![](https://jitpack.io/v/ethann-tech/Zincum.svg)](https://jitpack.io/#ethann-tech/Zincum)')
+    implementation('com.github.ethann-tech:Zincum:latest')
 }
 
 ```
