@@ -21,7 +21,7 @@ import io.github.uhsk.kit.dp2px
 
 class MainActivity : AppCompatActivity() {
     private lateinit var mBinding: ActivityMainBinding
-    private val items = arrayOf("StepNavigateBar", "倒计时", "短信验证码输入框", "时间工具类", "吸顶效果", "Loading")
+    private val items = arrayOf("StepNavigateBar", "倒计时", "短信验证码输入框", "时间工具类", "吸顶效果", "Loading","自定义View")
     private val mainAdapter by lazy { MainAdapter() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
