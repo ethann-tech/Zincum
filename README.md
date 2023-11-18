@@ -26,7 +26,7 @@
 ```kotlin
 
 dependencies {
-    implementation('com.github.ethann-tech:Zincum:0.0.3')
+    implementation('com.github.ethann-tech:Zincum:[![](https://jitpack.io/v/ethann-tech/Zincum.svg)](https://jitpack.io/#ethann-tech/Zincum)')
 }
 
 ```
