@@ -39,13 +39,9 @@ abstract class FragmentCore : Fragment() {
     abstract fun initView(view: View, savedInstanceState: Bundle?)
 
     open fun initData() {}
-    fun showLoading(message: String) {
+    open fun showLoading(message: String) { }
 
-    }
-
-    fun hideLoading() {
-
-    }
+    open fun hideLoading() { }
 
     override fun setUserVisibleHint(isVisibleToUser: Boolean) {
         super.setUserVisibleHint(isVisibleToUser)
