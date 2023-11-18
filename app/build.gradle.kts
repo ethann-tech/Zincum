@@ -7,7 +7,7 @@ android {
     namespace = libs.versions.packageNameApp.get()
     compileSdk = libs.versions.compileSdk.get().toInt()
     defaultConfig {
-        applicationId = "com.ethan.demo"
+        applicationId = libs.versions.packageNameApp.get()
         minSdk = libs.versions.minSdk.get().toInt()
         targetSdk = libs.versions.targetSdk.get().toInt()
         versionCode = libs.versions.versionCode.get().toInt()
@@ -28,8 +28,10 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
+
     buildFeatures {
         viewBinding = true
+        dataBinding = true
     }
 }
 
