@@ -18,7 +18,7 @@ abstract class FragmentCore : Fragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return getContainerView(inflater = inflater, container = container)
+        return getLayoutView(inflater = inflater, container = container)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -28,15 +28,7 @@ abstract class FragmentCore : Fragment() {
         initData()
     }
 
-    private fun getContainerView(inflater: LayoutInflater, container: ViewGroup?): View? {
-        return if (getLayoutResId() == -1) {
-            getLayoutView(inflater = inflater, container = container)
-        } else {
-            inflater.inflate(getLayoutResId(), container, false)
-        }
-    }
-
-    open fun getLayoutResId(): Int = -1
+    abstract fun getLayoutResId(): Int
 
     open fun getLayoutView(inflater: LayoutInflater, container: ViewGroup?): View? = null
 

@@ -26,28 +26,29 @@
         </activity>
 
         <activity
-            android:name=".activity.ActivityStepNavBar"
+            android:name=".ui.activity.ActivityStepNavBar"
             android:exported="false" />
         <activity
-            android:name=".activity.ActivityResendMsg"
+            android:name=".ui.activity.ActivityResendMsg"
             android:exported="false" />
         <activity
-            android:name=".activity.ActivityVerificationCode"
+            android:name=".ui.activity.ActivityVerificationCode"
             android:exported="false" />
         <activity
-            android:name=".activity.ActivityTimeUtil"
+            android:name=".ui.activity.ActivityTimeUtil"
             android:exported="false" />
         <activity
-            android:name=".activity.ActivityStickyHome"
+            android:name=".ui.activity.ActivityStickyHome"
             android:exported="false" />
         <activity
-            android:name=".activity.ActivitySticky"
+            android:name=".ui.activity.ActivitySticky"
             android:exported="false" />
         <!-- 设备信息-->
         <activity
-            android:name=".activity.ActivityDeviceInfo"
+            android:name=".ui.activity.ActivityDeviceInfo"
             android:exported="true" />
-        <activity android:name=".activity.ActivityLoading" android:exported="false" />
+        <activity android:name=".ui.activity.ActivityLoading" android:exported="false" />
+        <activity android:name=".ui.activity.ActivityTest" android:exported="false"/>
     </application>
 
 </manifest>
