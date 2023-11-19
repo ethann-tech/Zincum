@@ -42,6 +42,7 @@ dependencies {
     androidTestImplementation(libs.test.android.espresso)
 
 }
+
 afterEvaluate {
     publishing{
         publications {

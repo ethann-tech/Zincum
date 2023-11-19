@@ -18,7 +18,7 @@ import com.ethan.demo.adapter.MainAdapter
 import com.ethan.demo.base.ActivityBase
 import com.ethan.demo.databinding.ActivityMainBinding
 import com.ethan.demo.ui.activity.ActivityTest
-import io.github.uhsk.kit.dp2px
+import io.github.uhsk.kit.android.dp2px
 
 class MainActivity : AppCompatActivity() {
     private lateinit var mBinding: ActivityMainBinding
