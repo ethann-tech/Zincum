@@ -46,4 +46,10 @@
         <!--转一圈花费时长-->
         <attr name="hw_duration" format="integer"/>
     </declare-styleable>
+
+    <declare-styleable name="SideslipLayout">
+        <attr name="sl_enable" format="boolean" />
+        <attr name="sl_slideSlop" format="dimension" />
+        <attr name="sl_duration" format="integer" />
+    </declare-styleable>
 </resources>

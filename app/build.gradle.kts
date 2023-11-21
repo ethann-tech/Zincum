@@ -47,7 +47,7 @@ dependencies {
     implementation(libs.baserecyclerviewadapterhelper)
 
     implementation(libs.recyclerview.flexibledivider)
-    implementation(libs.kotlin.android.extension)
+    implementation(libs.ethan.kotlin.android.extension)
     implementation(libs.androidx.viewpage2)
     implementation(libs.flowhelper)
     implementation(project(":library"))

@@ -16,13 +16,23 @@ import com.ethan.demo.ui.activity.ActivityTimeUtil
 import com.ethan.demo.ui.activity.ActivityVerificationCode
 import com.ethan.demo.adapter.MainAdapter
 import com.ethan.demo.base.ActivityBase
+import com.ethan.demo.bean.MainItemBean
 import com.ethan.demo.databinding.ActivityMainBinding
 import com.ethan.demo.ui.activity.ActivityTest
-import io.github.uhsk.kit.dp2px
+import io.github.uhsk.kit.android.dp2px
 
 class MainActivity : AppCompatActivity() {
     private lateinit var mBinding: ActivityMainBinding
-    private val items = arrayOf("StepNavigateBar", "倒计时", "短信验证码输入框", "时间工具类", "吸顶效果", "Loading", "自定义View", "TestFragment")
+    private val items = arrayOf(
+        MainItemBean(text = "StepNavigateBar"),
+        MainItemBean(text = "倒计时"),
+        MainItemBean(text = "短信验证码输入框"),
+        MainItemBean(text = "时间工具类"),
+        MainItemBean(text = "吸顶效果"),
+        MainItemBean(text = "Loading"),
+        MainItemBean(text =  "自定义View"),
+        MainItemBean(text = "TestFragment"))
+
     private val mainAdapter by lazy { MainAdapter() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,6 +48,7 @@ class MainActivity : AppCompatActivity() {
                 HorizontalDividerItemDecoration.Builder(mBinding.recyclerView.context).color(Color.LTGRAY).margin(baseContext.dp2px(16), 0).size(1).build()
             )
         }
+
         mainAdapter.setOnItemClickListener { _, view, position ->
             when (position) {
                 0 -> ActivityStepNavBar.jump(view.context)
