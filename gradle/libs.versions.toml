@@ -20,7 +20,7 @@ material = "1.9.0"
 legacy-support-v4 = "1.0.0"
 lifecycle-livedata-ktx = "2.6.1"
 lifecycle-viewmodel-ktx = "2.6.1"
-ethan-kotlin-android-extension ="1.0.2"
+ethan-kotlin-android-extension ="1.0.3"
 [libraries]
 #
 # androidx & kotlin

@@ -72,7 +72,7 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.menu_device_info -> {
-                ActivityBase.jump(baseContext)
+                ActivityBase.jump(context = this)
             }
         }
         return super.onOptionsItemSelected(item)
