@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
             addItemDecoration(HorizontalDividerItemDecoration.Builder(mBinding.recyclerView.context).color(Color.LTGRAY).margin(baseContext.dp2px(16), 0).size(1).build())
         }
         mBinding.recyclerView.adapter = mainAdapter
-        mainAdapter.addAll(items.toList())
+        mainAdapter.submitList(items.toList())
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
