@@ -71,13 +71,13 @@ public final class MurmurHash3 {
      */
     public static final int DEFAULT_SEED = 104729;
 
-    /** TODO Replace on Java 8 with Long.BYTES. */
+    /**  Replace on Java 8 with Long.BYTES. */
     static final int LONG_BYTES = Long.SIZE / Byte.SIZE;
 
-    /** TODO Replace on Java 8 with Integer.BYTES. */
+    /**  Replace on Java 8 with Integer.BYTES. */
     static final int INTEGER_BYTES = Integer.SIZE / Byte.SIZE;
 
-    /** TODO Replace on Java 8 with Short.BYTES. */
+    /**  Replace on Java 8 with Short.BYTES. */
     static final int SHORT_BYTES = Short.SIZE / Byte.SIZE;
 
     // Constants for 32-bit variant

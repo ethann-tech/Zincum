@@ -586,7 +586,7 @@ public class Base64 extends BaseNCodec {
                 lineSeparator == null ? 0 : lineSeparator.length,
                 PAD_DEFAULT,
                 decodingPolicy);
-        // TODO could be simplified if there is no requirement to reject invalid line sep when length <=0
+        //  could be simplified if there is no requirement to reject invalid line sep when length <=0
         // @see test case Base64Test.testConstructors()
         if (lineSeparator != null) {
             if (containsAlphabetOrPad(lineSeparator)) {

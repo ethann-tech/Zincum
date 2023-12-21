@@ -48,11 +48,11 @@ public class BaseNCodecOutputStream extends FilterOutputStream {
     private final Context context = new Context();
 
     /**
-     * TODO should this be protected?
+     *  should this be protected?
      *
      * @param output the underlying output or null.
      * @param basedCodec a BaseNCodec.
-     * @param doEncode true to encode, false to decode, TODO should be an enum?
+     * @param doEncode true to encode, false to decode,  should be an enum?
      */
     public BaseNCodecOutputStream(final OutputStream output, final BaseNCodec basedCodec, final boolean doEncode) {
         super(output);

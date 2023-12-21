@@ -197,7 +197,7 @@ public abstract class BaseNCodec implements BinaryEncoder, BinaryDecoder {
      * Compares two {@code int} values numerically treating the values
      * as unsigned. Taken from JDK 1.8.
      *
-     * <p>TODO: Replace with JDK 1.8 Integer::compareUnsigned(int, int).</p>
+     * <p>: Replace with JDK 1.8 Integer::compareUnsigned(int, int).</p>
      *
      * @param  x the first {@code int} to compare
      * @param  y the second {@code int} to compare

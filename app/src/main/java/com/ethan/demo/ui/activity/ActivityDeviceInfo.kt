@@ -23,6 +23,5 @@ class ActivityDeviceInfo : ActivityBusinessBase<ActivityDeviceInfoBinding>() {
     }
 
     override fun initListener() {
-        TODO("Not yet implemented")
     }
 }
