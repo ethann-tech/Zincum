@@ -49,6 +49,7 @@
             android:exported="true" />
         <activity android:name=".ui.activity.ActivityLoading" android:exported="false" />
         <activity android:name=".ui.activity.ActivityTest" android:exported="false"/>
-    </application>
+        <activity android:name=".ui.activity.ActivityExtension" android:exported="false"/>
+     </application>
 
 </manifest>

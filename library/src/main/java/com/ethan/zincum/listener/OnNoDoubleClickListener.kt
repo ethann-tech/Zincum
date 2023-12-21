@@ -1,7 +1,6 @@
 package com.ethan.zincum.listener
 
 import android.view.View
-import androidx.appcompat.widget.Toolbar
 import java.util.*
 
 /**
@@ -12,11 +11,11 @@ import java.util.*
  * @description:
  * @date: 2021年4月28日
  */
-abstract class OnNoDoubleClickListener : View.OnClickListener {
+abstract class OnNoDoubleClickListener(val delayTime:Int=1000) : View.OnClickListener {
     private var lastClickTime: Long = 0
     override fun onClick(v: View) {
         val currentTime = Calendar.getInstance().timeInMillis
-        if (currentTime - lastClickTime > MIN_CLICK_DELAY_TIME) {
+        if (currentTime - lastClickTime > delayTime) {
             lastClickTime = currentTime
             onNoDoubleClick(v)
         }
@@ -28,25 +27,7 @@ abstract class OnNoDoubleClickListener : View.OnClickListener {
      */
     abstract fun onNoDoubleClick(v: View)
 
-    companion object {
-        /**
-         * 最小点击时间间隔
-         */
-        private const val MIN_CLICK_DELAY_TIME = 1000
-    }
+
 }
 
-fun View.setNoDoubleClickListener(listener:(view: View)->Unit) {
-    this.setOnClickListener(object : OnNoDoubleClickListener(){
-        override fun onNoDoubleClick(v: View) {
-            listener(v)
-        }
-    })
-}
-fun Toolbar.setNavigationNoDoubleClickListener(listener: (view: View) -> Unit){
-    this.setNavigationOnClickListener(object : OnNoDoubleClickListener(){
-        override fun onNoDoubleClick(v: View) {
-            listener(v)
-        }
-    })
-}
+

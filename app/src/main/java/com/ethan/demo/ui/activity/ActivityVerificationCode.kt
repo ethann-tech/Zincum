@@ -17,10 +17,10 @@ class ActivityVerificationCode:AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView( mBinding.root)
-        mBinding.includeLayoutToolbar.toolbar.setNavigationIcon(R.drawable.nav_back)
-        mBinding.includeLayoutToolbar.toolbar.title = "验证码输入框"
-        mBinding.includeLayoutToolbar.toolbar.setTitleTextColor(ResourcesCompat.getColor(resources, R.color.white, null))
-        mBinding.includeLayoutToolbar.toolbar.setNavigationOnClickListener {
+        mBinding.includeLayoutToolbar.mToolbar.setNavigationIcon(R.drawable.nav_back)
+        mBinding.includeLayoutToolbar.mToolbar.title = "验证码输入框"
+        mBinding.includeLayoutToolbar.mToolbar.setTitleTextColor(ResourcesCompat.getColor(resources, R.color.white, null))
+        mBinding.includeLayoutToolbar.mToolbar.setNavigationOnClickListener {
             finish()
         }
         //输入完成监听
