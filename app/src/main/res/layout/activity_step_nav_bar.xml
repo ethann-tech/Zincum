@@ -1,117 +1,121 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/layoutAppBar"
+<layout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-    </com.google.android.material.appbar.AppBarLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="0.0dp"
-        android:orientation="vertical"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingBottom="@dimen/activity_vertical_margin"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/layoutAppBar"
-        app:layout_constraintVertical_weight="1">
-
-        <com.ethan.zincum.StepNavigateBar
-            android:id="@+id/step_view_blue"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_marginTop="25dp"
-            app:borderColor="@android:color/holo_blue_light"
-            app:fillColor="@android:color/holo_blue_light"
-            app:labelColor="@android:color/white"
-            app:noFillColor="@android:color/white"
-            app:pendingLabelColor="@android:color/darker_gray"
-            app:radius="8"
-            app:stepSpace="6" />
-
-        <com.ethan.zincum.StepNavigateBar
-            android:id="@+id/step_view_green"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_below="@id/step_view_blue"
-            android:layout_marginTop="25dp"
-            app:borderColor="@android:color/holo_green_light"
-            app:fillColor="@android:color/holo_green_light"
-            app:labelColor="@android:color/black"
-            app:labelSize="18dp"
-            app:noFillColor="@android:color/white"
-            app:pendingLabelColor="@android:color/darker_gray"
-            app:radius="8"
-
-            app:stepSpace="6"
-            app:textMarginStart="50" />
-
-        <com.ethan.zincum.StepNavigateBar
-            android:id="@+id/step_view_red"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_below="@id/step_view_green"
-            android:layout_marginTop="25dp"
-            app:borderColor="@android:color/holo_red_light"
-            app:fillColor="@android:color/holo_red_light"
-            app:labelColor="@android:color/white"
-            app:noFillColor="@android:color/white"
-            app:pendingLabelColor="@android:color/darker_gray"
-            app:radius="8"
-            app:stepSpace="6" />
-
-        <com.ethan.zincum.StepNavigateBar
-            android:id="@+id/step_view_yellow"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_below="@id/step_view_red"
-            android:layout_marginTop="25dp"
-            app:borderColor="@android:color/holo_orange_light"
-            app:fillColor="@android:color/holo_orange_light"
-            app:labelColor="@android:color/white"
-            app:noFillColor="@android:color/white"
-            app:pendingLabelColor="@android:color/darker_gray"
-            app:radius="8"
-            app:stepSpace="6" />
-
-        <com.ethan.zincum.StepNavigateBar
-            android:id="@+id/step_view_purple"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_below="@id/step_view_yellow"
-            android:layout_marginTop="25dp"
-            app:borderColor="@android:color/holo_purple"
-            app:fillColor="@android:color/holo_purple"
-            app:labelColor="@android:color/white"
-            app:noFillColor="@android:color/white"
-            app:pendingLabelColor="@android:color/darker_gray"
-            app:radius="8"
-            app:stepSpace="6" />
-
-        <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/viewPager2"
+        android:layout_height="match_parent">
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/layoutAppBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/step_view_purple"
-            android:layout_alignParentBottom="true"
-            android:layout_marginTop="25dp" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0.0dp"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layoutAppBar"
+            app:layout_constraintVertical_weight="1">
+
+            <com.ethan.zincum.StepNavigateBar
+                android:id="@+id/step_view_blue"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="25dp"
+                app:borderColor="@android:color/holo_blue_light"
+                app:fillColor="@android:color/holo_blue_light"
+                app:labelColor="@android:color/white"
+                app:noFillColor="@android:color/white"
+                app:pendingLabelColor="@android:color/darker_gray"
+                app:radius="8"
+                app:stepSpace="6" />
+
+            <com.ethan.zincum.StepNavigateBar
+                android:id="@+id/step_view_green"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_below="@id/step_view_blue"
+                android:layout_marginTop="25dp"
+                app:borderColor="@android:color/holo_green_light"
+                app:fillColor="@android:color/holo_green_light"
+                app:labelColor="@android:color/black"
+                app:labelSize="18dp"
+                app:noFillColor="@android:color/white"
+                app:pendingLabelColor="@android:color/darker_gray"
+                app:radius="8"
+
+                app:stepSpace="6"
+                app:textMarginStart="50" />
+
+            <com.ethan.zincum.StepNavigateBar
+                android:id="@+id/step_view_red"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_below="@id/step_view_green"
+                android:layout_marginTop="25dp"
+                app:borderColor="@android:color/holo_red_light"
+                app:fillColor="@android:color/holo_red_light"
+                app:labelColor="@android:color/white"
+                app:noFillColor="@android:color/white"
+                app:pendingLabelColor="@android:color/darker_gray"
+                app:radius="8"
+                app:stepSpace="6" />
+
+            <com.ethan.zincum.StepNavigateBar
+                android:id="@+id/step_view_yellow"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_below="@id/step_view_red"
+                android:layout_marginTop="25dp"
+                app:borderColor="@android:color/holo_orange_light"
+                app:fillColor="@android:color/holo_orange_light"
+                app:labelColor="@android:color/white"
+                app:noFillColor="@android:color/white"
+                app:pendingLabelColor="@android:color/darker_gray"
+                app:radius="8"
+                app:stepSpace="6" />
+
+            <com.ethan.zincum.StepNavigateBar
+                android:id="@+id/step_view_purple"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_below="@id/step_view_yellow"
+                android:layout_marginTop="25dp"
+                app:borderColor="@android:color/holo_purple"
+                app:fillColor="@android:color/holo_purple"
+                app:labelColor="@android:color/white"
+                app:noFillColor="@android:color/white"
+                app:pendingLabelColor="@android:color/darker_gray"
+                app:radius="8"
+                app:stepSpace="6" />
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/viewPager2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/step_view_purple"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="25dp" />
 
 
-    </RelativeLayout>
+        </RelativeLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
+
+</layout>

@@ -5,12 +5,12 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.ethan.zincum.listener.setNoDoubleClickListener
 import com.ethan.zincum.verifcode.ICondition
 import com.ethan.zincum.verifcode.ResendControl
 import com.ethan.zincum.verifcode.ViewStateHelper
 import com.ethan.demo.databinding.ActivityResendMsgBinding
 import com.ethan.zincum.R
+import io.github.uhsk.kit.android.view.setOnNoDoubleClickListener
 
 class ActivityResendMsg:AppCompatActivity(), ICondition {
     private lateinit var mBinding:ActivityResendMsgBinding
@@ -26,10 +26,11 @@ class ActivityResendMsg:AppCompatActivity(), ICondition {
         initEvent()
     }
    private fun initEvent(){
-        mBinding.tvResend.setNoDoubleClickListener {
+
+        mBinding.tvResend.setOnNoDoubleClickListener {
             if (mBinding.edtPhone.toString().isEmpty()){
                 Toast.makeText(mBinding.edtPhone.context,"验证码不能为空",Toast.LENGTH_SHORT).show()
-                return@setNoDoubleClickListener
+                return@setOnNoDoubleClickListener
             }
             resendControl.startCountDown()
         }
