@@ -7,4 +7,6 @@
     <string name="menu_device_info">设备信息</string>
     <string name="content_description">""</string>
     <string name="hello_blank_fragment">Hello blank fragment1</string>
+    <string name="datastore_save">DataStore 保存</string>
+    <string name="datastore_get">DataStore 获取</string>
 </resources>

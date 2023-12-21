@@ -21,10 +21,10 @@ class ActivityLoading : ActivityBase() {
         super.onCreate(savedInstanceState)
         mBinding = ActivityLoadingBinding.inflate(layoutInflater)
         setContentView(mBinding.root)
-        mBinding.includeToolbar.toolbar.title = "Loading"
-        setSupportActionBar(mBinding.includeToolbar.toolbar)
-        mBinding.includeToolbar.toolbar.setNavigationIcon(R.drawable.nav_back)
-        mBinding.includeToolbar.toolbar.setNavigationOnClickListener { finish() }
+        mBinding.includeToolbar.mToolbar.title = "Loading"
+        setSupportActionBar(mBinding.includeToolbar.mToolbar)
+        mBinding.includeToolbar.mToolbar.setNavigationIcon(R.drawable.nav_back)
+        mBinding.includeToolbar.mToolbar.setNavigationOnClickListener { finish() }
 
         mBinding.btnDialogIos.setOnClickListener {
             val dialog = IOSLoadingDialog().setOnTouchOutside(true).showNow(supportFragmentManager, "IosLoadingDialog")

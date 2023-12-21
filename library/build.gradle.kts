@@ -40,6 +40,10 @@ dependencies {
     testImplementation(libs.test.junit)
     androidTestImplementation(libs.test.android.ext)
     androidTestImplementation(libs.test.android.espresso)
+    compileOnly(libs.androidx.datastore.preferences.core)
+    compileOnly(libs.androidx.datastore.preferences.rxjava3)
+    implementation (libs.commons.io)
+    implementation (libs.commons.lang)
 
 }
 

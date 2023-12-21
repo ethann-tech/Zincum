@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_context_test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="关机" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_context_test1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="关机" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_context_test2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="关机" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_data_store_save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/datastore_save"
+            android:textAllCaps="false" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_data_store_get"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/datastore_get"
+            android:textAllCaps="false" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_48" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_multi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="多次点击"
+            android:textAllCaps="false" />
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</layout>

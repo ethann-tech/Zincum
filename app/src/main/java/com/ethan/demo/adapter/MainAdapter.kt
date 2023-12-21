@@ -7,6 +7,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.DataBindingHolder
 import com.ethan.demo.bean.MainItemBean
 import com.ethan.demo.databinding.ItemMainBinding
+import com.ethan.demo.ui.activity.ActivityExtension
 import com.ethan.demo.ui.activity.ActivityLoading
 import com.ethan.demo.ui.activity.ActivityResendMsg
 import com.ethan.demo.ui.activity.ActivityStepNavBar
@@ -54,6 +55,7 @@ class MainAdapter : BaseQuickAdapter<MainItemBean, DataBindingHolder<ItemMainBin
                     4 -> ActivityStickyHome.jump(view.context)
                     5 -> ActivityLoading.jump(view.context)
                     6 -> ActivityTest.jump(view.context)
+                    7 -> ActivityExtension.jump(view.context)
                 }
             }
 

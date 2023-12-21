@@ -30,7 +30,7 @@ android {
     }
 
     buildFeatures {
-        viewBinding = true
+        viewBinding = false
         dataBinding = true
     }
 }
@@ -45,9 +45,13 @@ dependencies {
     androidTestImplementation(libs.test.android.ext)
     androidTestImplementation(libs.test.android.espresso)
     implementation(libs.baserecyclerviewadapterhelper)
-
+    implementation(libs.androidx.datastore.preferences)
+    implementation(libs.androidx.datastore.preferences.core)
+    implementation(libs.androidx.datastore.preferences.rxjava3)
+    implementation(libs.gson)
+    implementation(libs.slf4j.api)
+    implementation(libs.logback.android)
     implementation(libs.recyclerview.flexibledivider)
-    implementation(libs.ethan.kotlin.android.extension)
     implementation(libs.androidx.viewpage2)
     implementation(libs.flowhelper)
     implementation(project(":library"))
