@@ -457,7 +457,7 @@ val Context.fontDensity: Float
 
 
 /**
- * 当前屏幕的宽度
+ * 当前屏幕的宽度 px
  *
  * @since 0.1.1
  * @author Ethan
@@ -474,6 +474,7 @@ val Context.screenWidth: Int
  */
 val Context.screenHeight: Int
     get() =  if (isPortrait()) this.resources.displayMetrics.heightPixels else this.resources.displayMetrics.widthPixels
+
 val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "config_settings")
 
 

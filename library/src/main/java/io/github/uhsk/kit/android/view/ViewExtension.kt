@@ -1,13 +1,16 @@
 package io.github.uhsk.kit.android.view
 
+import android.graphics.Outline
 import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.Drawable
 import android.view.View
+import android.view.ViewOutlineProvider
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.NonNull
 import com.ethan.zincum.listener.OnMultiClickListener
 import com.ethan.zincum.listener.OnNoDoubleClickListener
+import io.github.uhsk.kit.android.obtainColor
 
 fun View.setOnNoDoubleClickListener(delayTime: Int = 1000, listener: (view: View) -> Unit) {
     this.setOnClickListener(object : OnNoDoubleClickListener(delayTime = delayTime) {
@@ -86,7 +89,7 @@ fun View.setInVisible(visible: Int) {
 var TextView.textColor: Int
     get() = this.textColors.defaultColor
     set(value) {
-        this.setTextColor(this.context.getColor(value))
+        this.setTextColor(this.context.obtainColor(value))
     }
 
 
@@ -97,7 +100,7 @@ var TextView.textColor: Int
 var View.backgroundColor: Int
     get() = (this.background as ColorDrawable).color
     set(value) {
-        this.setBackgroundColor(this.context.getColor(value))
+        this.setBackgroundColor(this.context.obtainColor(value))
     }
 
 /**
@@ -132,3 +135,52 @@ var ImageView.imageResource: Int
     set(value) {
         this.setImageResource(value)
     }
+
+/**
+ * 单位px
+ * 给View设置圆角
+ */
+fun View.clipViewCornerRadius(radius:Int){
+    if (radius>0){
+        this.outlineProvider = object : ViewOutlineProvider() {
+            override fun getOutline(view: View?, outline: Outline?) {
+                outline?.setRoundRect(0, 0, view?.width ?: 0, view?.height ?: 0, radius.toFloat())
+            }
+        }
+        this.clipToOutline =true
+    }else{
+        this.clipToOutline =false
+    }
+ }
+/**
+ * 设置View顶部圆角
+ * @param radius 圆角半径  单位px
+ */
+fun View.clipViewCornerTopRadius(radius:Int){
+    if (radius>0){
+        this.outlineProvider = object : ViewOutlineProvider() {
+            override fun getOutline(view: View?, outline: Outline?) {
+                outline?.setRoundRect(0, 0, view?.width ?: 0, view?.height?.plus(radius) ?: 0, radius.toFloat())
+            }
+        }
+        this.clipToOutline =true
+    }else{
+        this.clipToOutline =false
+    }
+}
+/**
+ * 设置View底部圆角
+ * @param radius 半径 单位px
+ */
+fun View.clipViewCornerBottomRadius(radius:Int){
+    if (radius>0){
+        this.outlineProvider = object : ViewOutlineProvider() {
+            override fun getOutline(view: View?, outline: Outline?) {
+                outline?.setRoundRect(0, -radius, view?.width ?: 0, view?.height ?: 0, radius.toFloat())
+            }
+        }
+        this.clipToOutline =true
+    }else{
+        this.clipToOutline =false
+    }
+}
