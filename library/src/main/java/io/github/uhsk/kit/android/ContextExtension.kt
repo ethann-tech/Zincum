@@ -21,6 +21,7 @@ import android.Manifest
 import android.content.ClipboardManager
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.content.res.Configuration
 import android.content.res.Resources
 import android.graphics.drawable.Drawable
@@ -326,6 +327,7 @@ fun Context.isLandscape(): Boolean {
 /**
  * @since 1.0.11
  * @author sollyu
+ * 判断是否为竖屏  true 竖屏  false 横屏
  */
 fun Context.isPortrait(): Boolean {
     return this.resources.configuration.orientation == Configuration.ORIENTATION_PORTRAIT
@@ -372,6 +374,22 @@ fun Context.getMinVolume(@AudioServiceStreamType type: Int = AudioManager.STREAM
  */
 fun Context.setVolume(value: Int, @AudioServiceStreamType type: Int = AudioManager.STREAM_MUSIC, @AudioServiceStreamFlags flags: Int = AudioManager.FLAG_SHOW_UI) {
     this.getSystemServiceForAudioService().setStreamVolume(type, value, flags)
+}
+fun Context.getVersionName(): String = try {
+    val manager = this.packageManager
+    manager.getPackageInfo(this.packageName, 0).versionName
+} catch (e: PackageManager.NameNotFoundException) {
+    ""
+}
+fun Context.getVersionCode(): Int = try {
+    val manager = this.packageManager
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+        manager.getPackageInfo(this.packageName, 0).longVersionCode.toInt()
+    } else {
+        manager.getPackageInfo(this.packageName, 0).versionCode
+    }
+} catch (e: PackageManager.NameNotFoundException) {
+    0
 }
 
 /**
@@ -438,6 +456,24 @@ val Context.fontDensity: Float
     get() = this.resources.displayMetrics.scaledDensity
 
 
+/**
+ * 当前屏幕的宽度
+ *
+ * @since 0.1.1
+ * @author Ethan
+ */
+
+val Context.screenWidth: Int
+    get() =  if (isPortrait()) this.resources.displayMetrics.widthPixels else this.resources.displayMetrics.heightPixels
+
+/**
+ * 当前屏幕的高度
+ *
+ * @since 0.1.1
+ * @author Ethan
+ */
+val Context.screenHeight: Int
+    get() =  if (isPortrait()) this.resources.displayMetrics.heightPixels else this.resources.displayMetrics.widthPixels
 val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "config_settings")
 
 
