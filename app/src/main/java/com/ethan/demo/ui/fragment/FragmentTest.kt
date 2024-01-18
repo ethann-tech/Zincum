@@ -21,7 +21,6 @@ class FragmentTest : FragmentDataBindingBase<FragmentTestBinding>() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
-        mBinding.tv.text = param1
     }
 
 

@@ -52,4 +52,13 @@
         <attr name="sl_slideSlop" format="dimension" />
         <attr name="sl_duration" format="integer" />
     </declare-styleable>
+
+    <declare-styleable name="CustomItemView">
+        <attr name="type" format="enum">
+            <enum name="singleText" value="0"/>
+            <enum name="multiText" value="1"/>
+        </attr>
+    </declare-styleable>
+
+
 </resources>
