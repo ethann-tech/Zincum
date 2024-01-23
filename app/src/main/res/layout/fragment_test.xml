@@ -1,17 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
-    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.fragment.FragmentTest">
+        android:fillViewport="true"
+        android:scrollbars="none">
 
-        <com.ethan.zincum.widget.CustomItemView
-            android:id="@+id/tv"
+        <androidx.appcompat.widget.LinearLayoutCompat xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/container"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_42" />
+            android:layout_height="match_parent"
+            android:background="@color/color_dce0e4"
+            android:orientation="vertical"
+            tools:context=".ui.fragment.FragmentTest">
 
-    </FrameLayout>
+            <com.ethan.zincum.widget.CustomItemView
+                android:id="@+id/item0"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_48"
+                android:layout_marginTop="@dimen/dp_16"
+                android:background="@color/white"
+                app:iv_bottom_line_color="@color/color_f0f2f4"
+                app:iv_bottom_line_height="@dimen/dp_1"
+                app:iv_bottom_line_margin_start="@dimen/dp_36"
+                app:iv_icon="@drawable/img_setting"
+                app:iv_icon_start="@dimen/dp_8"
+                app:iv_into_img="@drawable/img_item_view_into"
+                app:iv_main_text="这是一个标题"
+                app:iv_main_text_start="@dimen/dp_8"
+                app:iv_right_text_background="@drawable/shape_24_24_red_dot"
+                app:iv_second_text="这是子标题"
+                app:iv_second_text_color="@color/teal_200"
+                app:type="singleText" />
 
+            <com.ethan.zincum.widget.CustomItemView
+                android:id="@+id/item1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_48"
+                android:background="@color/white"
+                app:iv_bottom_line_color="@color/color_f0f2f4"
+                app:iv_bottom_line_height="@dimen/dp_1"
+                app:iv_bottom_line_margin_end="@dimen/dp_16"
+                app:iv_bottom_line_margin_start="@dimen/dp_16"
+                app:iv_icon="@drawable/img_wechat_moments"
+                app:iv_icon_start="@dimen/dp_10"
+                app:iv_into_img="@drawable/img_item_view_into"
+                app:iv_main_text="朋友圈"
+                app:iv_main_text_start="@dimen/dp_8"
+
+                app:iv_right_text="1条新消息"
+                app:iv_right_text_color="@color/color_0159a5"
+                app:type="singleText" />
+
+            <com.ethan.zincum.widget.CustomItemView
+                android:id="@+id/item2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_48"
+                android:background="@color/white"
+                app:iv_bottom_line_color="@color/color_f0f2f4"
+                app:iv_bottom_line_height="@dimen/dp_1"
+                app:iv_bottom_line_margin_end="@dimen/dp_16"
+                app:iv_bottom_line_margin_start="@dimen/dp_16"
+                app:iv_icon="@drawable/img_wechat_moments"
+                app:iv_icon_start="@dimen/dp_10"
+                app:iv_into_img="@drawable/img_item_view_into"
+                app:iv_main_text="朋友圈"
+                app:iv_main_text_start="@dimen/dp_8"
+                app:iv_right_text_background="@drawable/shape_24_24_red_dot"
+                app:iv_second_text="这是子标题"
+                app:iv_second_text_color="@color/teal_200"
+                app:type="multiText" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </androidx.core.widget.NestedScrollView>
 
 </layout>

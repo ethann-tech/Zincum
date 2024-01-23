@@ -17,6 +17,7 @@ import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputConnection
 import android.view.inputmethod.InputMethodManager
 import com.ethan.zincum.R
+import io.github.uhsk.kit.android.dp2px
 
 /**
  *  desc : 自定义验证码输入框
@@ -166,8 +167,7 @@ class VerificationCodeEditText @JvmOverloads constructor(
         isFocusableInTouchMode = true
 
         //获取属性
-        context.obtainStyledAttributes(attrs, R.styleable.VerificationCodeEditText)
-            .apply {
+        context.obtainStyledAttributes(attrs, R.styleable.VerificationCodeEditText).apply {
                 textSize = getDimension(R.styleable.VerificationCodeEditText_android_textSize, 50f)
                 textColor = getColor(R.styleable.VerificationCodeEditText_android_textColor, Color.BLACK)
                 inputCount = getInt(R.styleable.VerificationCodeEditText_inputCount, 4)
@@ -178,7 +178,7 @@ class VerificationCodeEditText @JvmOverloads constructor(
                 passwordText = getString(R.styleable.VerificationCodeEditText_passwordText) ?: "●"
                 isBoldText = getBoolean(R.styleable.VerificationCodeEditText_isBoldText, false)
                 cursorDrawable = getDrawable(R.styleable.VerificationCodeEditText_cursorDrawable)
-                cursorDrawableWidth = getDimensionPixelSize(R.styleable.VerificationCodeEditText_cursorDrawableWidth, dip2px(1f))
+                cursorDrawableWidth = getDimensionPixelSize(R.styleable.VerificationCodeEditText_cursorDrawableWidth,1f.dp2px())
                 cursorDrawableHeight = getDimensionPixelSize(R.styleable.VerificationCodeEditText_cursorDrawableHeight, textSize.toInt())
                 needDrawCursor = cursorDrawable != null
 
@@ -367,10 +367,7 @@ class VerificationCodeEditText @JvmOverloads constructor(
         invalidate()
     }
 
-    private fun dip2px(dipValue: Float): Int {
-        val displayMetricsDensity = context.resources.displayMetrics.density
-        return (dipValue * displayMetricsDensity + 0.5f).toInt()
-    }
+
 
     override fun onDetachedFromWindow() {
         super.onDetachedFromWindow() //为了防止占用无用的资源，在移除的时候记得停止重绘任务
