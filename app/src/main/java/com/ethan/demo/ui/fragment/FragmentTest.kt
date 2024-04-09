@@ -1,8 +1,9 @@
 package com.ethan.demo.ui.fragment
 
-import android.graphics.Color
 import android.os.Bundle
 import android.view.View
+import android.view.ViewGroup.LayoutParams
+import androidx.appcompat.widget.LinearLayoutCompat
 import com.ethan.demo.R
 import com.ethan.demo.databinding.FragmentTestBinding
 import com.ethan.zincum.base.FragmentDataBindingBase
@@ -28,25 +29,42 @@ class FragmentTest : FragmentDataBindingBase<FragmentTestBinding>() {
             param2 = it.getString(ARG_PARAM2)
         }
 
-        val item2 =CustomItemView(requireContext())
-        item2.apply {
+        mBinding.layoutDynamic.addView(CustomItemView(requireContext()).apply {
             rightText = "20"
-            rightTextColor =R.color.white
-            rightTextBackground =R.drawable.shape_24_24_red_dot
-            rightTextMarginEnd =16.dp2px()
-            rightTextHeight =18.dp2px()
-            rightTextWidth =18.dp2px()
-            rightTextSize =10.sp2px().toFloat()
-            mainTextColor =context.obtainColor(R.color.color_D81B60)
-            mainText ="动态设置文本"
-            mainTextColor =context.obtainColor(R.color.color_D81B60)
-            mainTextStart =16.dp2px().toFloat()
-            type =CustomItemView.Type.SINGLE_TEXT
-            background =R.color.white.asDrawable(context)
-//            background =R.color.teal_200.asDrawable(context)
+            rightTextColor = R.color.white
+            rightTextBackground = R.drawable.shape_24_24_red_dot
+            rightTextMarginEnd = 16.dp2px()
+            rightTextHeight = 18.dp2px()
+            rightTextWidth = 18.dp2px()
+            rightTextSize = 10.sp2px().toFloat()
+            mainTextColor = context.obtainColor(R.color.color_D81B60)
+            mainText = "动态设置文本"
+            mainTextColor = context.obtainColor(R.color.color_D81B60)
+            mainTextStart = 16.dp2px().toFloat()
+            background = R.color.white.asDrawable(context) //            background =R.color.teal_200.asDrawable(context)
+        })
+        mBinding.layoutDynamic.addView(CustomItemView(requireContext()).apply {
+            background = R.color.color_b2d0e9.asDrawable(context)
 
-        }
-        mBinding.container.addView(item2)
+            type = CustomItemView.Type.MULTI_TEXT
+            rightText = "20"
+            rightTextColor = R.color.white
+            rightTextBackground = R.drawable.shape_24_24_red_dot
+            rightTextMarginEnd = 16.dp2px()
+            rightTextHeight = 18.dp2px()
+            rightTextWidth = 18.dp2px()
+            rightTextSize = 10.sp2px().toFloat()
+
+            mainText = "动态设置文本2"
+            mainTextColor = context.obtainColor(R.color.color_D81B60)
+            mainTextStart = 16.dp2px().toFloat()
+            mainTextSize =16F.sp2px().toFloat()
+
+            secondText = "这是动态设置的子标题"
+            secondTextSize = 12.sp2px().toFloat()
+            secondTextColor = R.color.color_550165b8
+        }, LayoutParams(LinearLayoutCompat.LayoutParams.MATCH_PARENT, 72.dp2px()))
+
     }
 
 

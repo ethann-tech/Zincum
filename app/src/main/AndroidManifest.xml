@@ -9,6 +9,7 @@
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/app_launcher"
         android:label="@string/app_name"
+        android:name=".apps.App"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Zincum"
@@ -43,6 +44,7 @@
         <activity
             android:name=".ui.activity.ActivitySticky"
             android:exported="false" />
+        <activity android:name=".ui.activity.ActivityContextExt"/>
         <!-- 设备信息-->
         <activity
             android:name=".ui.activity.ActivityDeviceInfo"

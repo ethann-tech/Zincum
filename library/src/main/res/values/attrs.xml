@@ -76,12 +76,13 @@
         <attr name="iv_icon" format="reference" />
 
         <attr name="iv_into_img" format="reference" />
+        <attr name="iv_into_img_margin_end" format="dimension|reference" />
         <attr name="iv_into_img_height" format="dimension|reference" />
         <attr name="iv_into_img_width" format="dimension|reference" />
 
         <attr name="iv_bottom_line_height" format="dimension|reference"/>
         <attr name="iv_bottom_line_color" format="color|reference" />
-        <attr name="iv_bottom_line_margin_start" format="reference|dimension"/>
+        <attr name="iv_bottom_line_margin_start" format="dimension|reference"/>
         <attr name="iv_bottom_line_margin_end" format="dimension|reference"/>
 
         <attr name="iv_right_text" format="string|reference"/>
@@ -91,6 +92,7 @@
         <attr name="iv_right_text_width" format="dimension|reference" />
         <attr name="iv_right_text_margin_end" format="dimension|reference" />
         <attr name="iv_right_text_background" format="reference" />
+
     </declare-styleable>
 
 

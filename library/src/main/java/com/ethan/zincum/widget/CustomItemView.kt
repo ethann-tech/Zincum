@@ -16,6 +16,7 @@ import io.github.uhsk.kit.android.sp2px
 import io.github.uhsk.kit.android.view.backgroundColor
 import io.github.uhsk.kit.android.view.backgroundResource
 import io.github.uhsk.kit.android.view.textColor
+import io.github.uhsk.kit.asColor
 
 /**
  * 自定义ItemView
@@ -35,6 +36,10 @@ class CustomItemView @JvmOverloads constructor(context: Context, attrs: Attribut
     }
 
     var type: Type = Type.SINGLE_TEXT
+        set(value) {
+            field =value
+            buildViewByType()
+        }
 
 
     var mainText: String = ""
@@ -79,13 +84,13 @@ class CustomItemView @JvmOverloads constructor(context: Context, attrs: Attribut
     var mainTextColor: Int = 0
         set(value) {
             field = value
-            tvMain.setTextColor(mainTextColor)
+            tvMain.setTextColor(value)
         }
 
-    var mainTextSize: Float = 0F
+    var mainTextSize: Float = 14F
         set(value) {
             field = value
-            tvMain.textSize = mainTextSize
+            tvMain.setTextSize(TypedValue.COMPLEX_UNIT_PX,value)
         }
 
     /**
@@ -112,7 +117,7 @@ class CustomItemView @JvmOverloads constructor(context: Context, attrs: Attribut
     var secondTextSize: Float = 13F
         set(value) {
             field = value
-            tvSecond.textSize = value
+            tvSecond.setTextSize(TypedValue.COMPLEX_UNIT_PX,value)
         }
 
     var bottomLineHeight: Float = 0F
@@ -141,6 +146,12 @@ class CustomItemView @JvmOverloads constructor(context: Context, attrs: Attribut
         set(value) {
             field = value
             imgIntoIcon.setImageResource(value)
+        }
+
+    var imgIntoMarginEnd :Int =0
+        set(value) {
+            field = value
+            (imgIntoIcon.layoutParams as MarginLayoutParams).marginEnd = value
         }
 
     var rightTextColor: Int = 0
@@ -234,7 +245,7 @@ class CustomItemView @JvmOverloads constructor(context: Context, attrs: Attribut
             secondTextStart = getDimension(R.styleable.CustomItemView_iv_second_text_start, 0F)
             secondTextTop = getDimension(R.styleable.CustomItemView_iv_second_text_top, 0F)
             secondTextColor = getColor(R.styleable.CustomItemView_iv_second_text_color, Color.parseColor("#ADADB0"))
-            secondTextSize = getDimension(R.styleable.CustomItemView_iv_second_text_size, 13.sp2px().toFloat())
+            secondTextSize = getDimension(R.styleable.CustomItemView_iv_second_text_size,13.sp2px().toFloat())
 
             bottomLineHeight = getDimension(R.styleable.CustomItemView_iv_bottom_line_height, 0F)
             bottomLineColor = getColor(R.styleable.CustomItemView_iv_bottom_line_color, Color.parseColor("#000000"))
@@ -242,6 +253,7 @@ class CustomItemView @JvmOverloads constructor(context: Context, attrs: Attribut
             bottomLineMarginEnd = getDimension(R.styleable.CustomItemView_iv_bottom_line_margin_end, 0F)
 
             imgInto = getResourceId(R.styleable.CustomItemView_iv_into_img, 0)
+            imgIntoMarginEnd = getDimension(R.styleable.CustomItemView_iv_into_img_margin_end, 0F).toInt()
 
             rightTextBackground = getResourceId(R.styleable.CustomItemView_iv_right_text_background, 0)
             rightTextColor = getResourceId(R.styleable.CustomItemView_iv_right_text_color, R.color.black)
@@ -252,11 +264,11 @@ class CustomItemView @JvmOverloads constructor(context: Context, attrs: Attribut
             rightTextHeight = getDimension(R.styleable.CustomItemView_iv_right_text_height, 0F).toInt()
             recycle()
         }
-        buildViewByType()
+        buildView()
     }
 
 
-    private fun buildViewByType() {
+    private fun buildView() {
 
         if (mainText.isNotBlank()) {
             tvMain.text = mainText
@@ -297,6 +309,7 @@ class CustomItemView @JvmOverloads constructor(context: Context, attrs: Attribut
         }
 
         bottomLine.setBackgroundColor(bottomLineColor)
+
         (bottomLine.layoutParams as MarginLayoutParams).apply {
             marginStart = bottomLineMarginStart.toInt()
             marginEnd = bottomLineMarginEnd.toInt()
@@ -305,6 +318,9 @@ class CustomItemView @JvmOverloads constructor(context: Context, attrs: Attribut
 
         if (imgInto != 0) {
             imgIntoIcon.setImageResource(imgInto)
+        }
+        if (imgIntoMarginEnd != 0) {
+            (imgIntoIcon.layoutParams as MarginLayoutParams).marginEnd = imgIntoMarginEnd
         }
 
         if (rightTextBackground != 0) {
@@ -321,7 +337,10 @@ class CustomItemView @JvmOverloads constructor(context: Context, attrs: Attribut
         tvRightText.setTextSize(TypedValue.COMPLEX_UNIT_PX, rightTextSize)
         tvRightText.text = rightText
 
+       buildViewByType()
+    }
 
+    private fun buildViewByType(){
         when (type) {
             Type.SINGLE_TEXT -> {
                 tvSecond.visibility = View.GONE
@@ -331,6 +350,7 @@ class CustomItemView @JvmOverloads constructor(context: Context, attrs: Attribut
                 tvSecond.visibility = View.VISIBLE
             }
         }
-
     }
+
+
 }

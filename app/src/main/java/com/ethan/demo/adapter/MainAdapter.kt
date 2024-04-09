@@ -7,6 +7,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.DataBindingHolder
 import com.ethan.demo.bean.MainItemBean
 import com.ethan.demo.databinding.ItemMainBinding
+import com.ethan.demo.ui.activity.ActivityContextExt
 import com.ethan.demo.ui.activity.ActivityExtension
 import com.ethan.demo.ui.activity.ActivityLoading
 import com.ethan.demo.ui.activity.ActivityResendMsg
@@ -56,6 +57,7 @@ class MainAdapter : BaseQuickAdapter<MainItemBean, DataBindingHolder<ItemMainBin
                     5 -> ActivityLoading.jump(view.context)
                     6 -> ActivityTest.jump(view.context)
                     7 -> ActivityExtension.jump(view.context)
+                    8 -> ActivityContextExt.jump(view.context)
                 }
             }
 

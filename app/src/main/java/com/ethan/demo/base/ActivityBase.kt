@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.ethan.demo.ui.activity.ActivityStepNavBar
 
 open class ActivityBase : AppCompatActivity() {
+    protected val mContext by lazy { this }
     companion object {
         fun jump(context: Context) {
             context.startActivity(Intent(context, ActivityStepNavBar::class.java))

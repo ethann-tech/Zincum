@@ -50,3 +50,7 @@ fun Int.asColor(context: Context): Int = ResourcesCompat.getColor(context.applic
 
 fun Int.asDrawable(context: Context):Drawable =ResourcesCompat.getDrawable(context.applicationContext.resources,this,null)?: throw NullPointerException("该资源文件转Drawable为null")
 
+/**
+ * 字符串资源id
+ */
+fun Int.asStringResId(context: Context):String =context.getString(this)

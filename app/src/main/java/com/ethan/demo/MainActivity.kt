@@ -13,6 +13,7 @@ import com.ethan.demo.base.ActivityBase
 import com.ethan.demo.bean.MainItemBean
 import com.ethan.demo.databinding.ActivityMainBinding
 import io.github.uhsk.kit.android.dp2px
+import io.github.uhsk.kit.asStringResId
 
 class MainActivity : AppCompatActivity() {
     private lateinit var mBinding: ActivityMainBinding
@@ -23,8 +24,10 @@ class MainActivity : AppCompatActivity() {
         MainItemBean(text = "时间工具类"),
         MainItemBean(text = "吸顶效果"),
         MainItemBean(text = "Loading"),
-        MainItemBean(text =  "ActivityTest"),
-        MainItemBean(text = "ActivityExtension"))
+        MainItemBean(text = "ActivityTest"),
+        MainItemBean(text = "ActivityExtension"),
+        MainItemBean(text = "Context扩展")
+    )
 
     private val mainAdapter by lazy { MainAdapter() }
 
@@ -32,12 +35,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         mBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(mBinding.root)
-        setSupportActionBar(mBinding.includeLayoutToolbar.mToolbar)
-        mBinding.includeLayoutToolbar.mToolbar.title = "Zincum"
+
+        mBinding.includeLayoutToolbar.mToolbar.title = R.string.app_name.asStringResId(context = baseContext)
         mBinding.includeLayoutToolbar.mToolbar.setTitleTextColor(ResourcesCompat.getColor(resources, R.color.white, null))
+        setSupportActionBar(mBinding.includeLayoutToolbar.mToolbar)
         mBinding.recyclerView.apply {
             layoutManager = LinearLayoutManager(mBinding.root.context)
-            addItemDecoration(HorizontalDividerItemDecoration.Builder(mBinding.recyclerView.context).color(Color.LTGRAY).margin(baseContext.dp2px(16), 0).size(1).build())
+            addItemDecoration(HorizontalDividerItemDecoration.Builder(mBinding.recyclerView.context)
+                .color(Color.LTGRAY)
+                .margin(baseContext.dp2px(16), 0).size(1).build())
         }
         mBinding.recyclerView.adapter = mainAdapter
         mainAdapter.submitList(items.toList())

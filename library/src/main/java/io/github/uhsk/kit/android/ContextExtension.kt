@@ -46,7 +46,10 @@ import io.github.uhsk.kit.android.defs.AudioServiceStreamFlags
 import io.github.uhsk.kit.android.defs.AudioServiceStreamType
 import io.github.uhsk.kit.asColor
 import io.github.uhsk.kit.asDrawable
+import java.io.BufferedReader
 import java.io.File
+import java.io.InputStreamReader
+import java.lang.StringBuilder
 
 @Suppress(names = ["FunctionName"])
 private fun Intent.__contextStartActivityDefaultFlag(block: (Intent.() -> Unit)?) {
@@ -493,5 +496,27 @@ fun Context.obtainColor(@ColorRes color:Int):Int = color.asColor(this)
  * @param drawable 图标资源
  * @return 图标资源
  */
-fun Context.obtainDrawable(@DrawableRes drawable:Int): Drawable = drawable.asDrawable(this)
+fun Context.obtainDrawable(@DrawableRes drawable: Int): Drawable = drawable.asDrawable(this)
 
+/**
+ * @author ethan
+ * @version 0.1.2
+ *
+ * 读取Assets文件
+ * @param path 文件路径
+ * @return 文件内容 类型: String
+ */
+fun Context.readAssetFile(path: String): String {
+    val builder = StringBuilder()
+    try {
+        val bufferReader = BufferedReader(InputStreamReader(assets.open(path), Charsets.UTF_8))
+        var line: String?
+        while (bufferReader.readLine().also { line = it } != null) {
+            builder.append(line)
+        }
+    } catch (e: Exception) {
+        builder.append("")
+        e.printStackTrace()
+    }
+    return builder.toString()
+}
