@@ -27,7 +27,7 @@ class ActivityContextExt : ActivityBase() {
         setSupportActionBar(mBinding.toolbar)
         mBinding.toolbar.navigationIcon = R.drawable.nav_back.asDrawable(mContext)
 
-        val assetsFile = baseContext.readAssetFile(path = "loginresult_back.json")
+        val assetsFile = baseContext.readAssetFile(path = "test/result.json")
         mLogger.debug("LOG:ActivityContextExt:onCreate: assetsFile={}", assetsFile)
     }
 }

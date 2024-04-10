@@ -503,7 +503,7 @@ fun Context.obtainDrawable(@DrawableRes drawable: Int): Drawable = drawable.asDr
  * @version 0.1.2
  *
  * 读取Assets文件
- * @param path 文件路径
+ * @param path 文件路径 例: "result.json","test/result.json"
  * @return 文件内容 类型: String
  */
 fun Context.readAssetFile(path: String): String {
