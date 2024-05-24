@@ -9,4 +9,7 @@
     <string name="hello_blank_fragment">Hello blank fragment1</string>
     <string name="datastore_save">DataStore 保存</string>
     <string name="datastore_get">DataStore 获取</string>
+    <string name="content_1">在一座古老的城市里，有个名叫艾米的小女孩，她拥有一双能看见别人看不见的事物的特殊眼睛。一天，她在公园的角落发现了一个破旧的音乐盒。当艾米旋转发条，美妙的旋律飘散开来，一只透明的小精灵从音乐盒中飞出。小精灵告诉艾米，只有找到失落的三枚音符，才能解开它的诅咒。
+艾米开始了寻找音符的冒险。她在图书馆的书页缝隙中找到了第一枚，从废弃工厂的机器轰鸣中听到了第二枚。</string>
+    <string name="content_2">As the three music notes were reunited, the music box shimmered with restored brilliance, and the sprite was freed from its curse. Grateful, the sprite bestowed upon Amy a pair of enchanted dancing shoes. With each step Amy took in the shoes, she brought joy to the city. From that day on, Amy used her dance steps to bring endless happiness and harmony to the town.</string>
 </resources>
