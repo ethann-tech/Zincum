@@ -7,14 +7,17 @@ import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.DataBindingHolder
 import com.ethan.demo.bean.MainItemBean
 import com.ethan.demo.databinding.ItemMainBinding
+import com.ethan.demo.ui.activity.ActivityContextExt
 import com.ethan.demo.ui.activity.ActivityExtension
 import com.ethan.demo.ui.activity.ActivityLoading
 import com.ethan.demo.ui.activity.ActivityResendMsg
 import com.ethan.demo.ui.activity.ActivityStepNavBar
 import com.ethan.demo.ui.activity.ActivityStickyHome
 import com.ethan.demo.ui.activity.ActivityTest
+import com.ethan.demo.ui.activity.ActivityTextView
 import com.ethan.demo.ui.activity.ActivityTimeUtil
 import com.ethan.demo.ui.activity.ActivityVerificationCode
+import com.ethan.zincum.base.ActivityCore
 import com.ethan.zincum.helper.SlideHelper
 import com.ethan.zincum.toast.Toast
 import com.ethan.zincum.widget.SideslipLayout
@@ -41,24 +44,26 @@ class MainAdapter : BaseQuickAdapter<MainItemBean, DataBindingHolder<ItemMainBin
                     val result = mSlideHelper.closeAll(layout)
                     return false
                 }
+
                 override fun onStateChanged(layout: SideslipLayout, open: Boolean) {
                     item.open = open
                     mSlideHelper.onStateChanged(layout = layout, open = open)
                 }
             })
-            holder.binding.layoutContent.setOnClickListener {view->
+            holder.binding.layoutContent.setOnClickListener { view ->
                 when (position) {
-                    0 -> ActivityStepNavBar.jump(view.context)
-                    1 -> ActivityResendMsg.jump(view.context)
-                    2 -> ActivityVerificationCode.jump(view.context)
-                    3 -> ActivityTimeUtil.jump(view.context)
-                    4 -> ActivityStickyHome.jump(view.context)
-                    5 -> ActivityLoading.jump(view.context)
-                    6 -> ActivityTest.jump(view.context)
-                    7 -> ActivityExtension.jump(view.context)
+                    0 -> ActivityCore.jump(context = view.context, cls = ActivityStepNavBar::class.java)
+                    1 -> ActivityCore.jump(context = view.context, cls = ActivityResendMsg::class.java)
+                    2 -> ActivityCore.jump(context = view.context, cls = ActivityVerificationCode::class.java)
+                    3 -> ActivityCore.jump(context = view.context, cls = ActivityTimeUtil::class.java)
+                    4 -> ActivityCore.jump(context = view.context, cls = ActivityStickyHome::class.java)
+                    5 -> ActivityCore.jump(context = view.context, cls = ActivityLoading::class.java)
+                    6 -> ActivityCore.jump(context = view.context, cls = ActivityTest::class.java)
+                    7 -> ActivityCore.jump(context = view.context, cls = ActivityExtension::class.java)
+                    8 -> ActivityCore.jump(context = view.context, cls = ActivityContextExt::class.java)
+                    9 -> ActivityCore.jump(context = view.context, cls = ActivityTextView::class.java)
                 }
             }
-
         }
     }
 

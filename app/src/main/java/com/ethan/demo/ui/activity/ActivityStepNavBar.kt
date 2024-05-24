@@ -1,35 +1,20 @@
 package com.ethan.demo.ui.activity
 
-import android.content.Context
-import android.content.Intent
-import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.res.ResourcesCompat
 import androidx.viewpager2.widget.ViewPager2
 import com.ethan.demo.R
 import com.ethan.demo.adapter.ViewPagerAdapter
-
+import com.ethan.demo.base.ActivityBusinessBase
 import com.ethan.demo.databinding.ActivityStepNavBarBinding
 
-open class ActivityStepNavBar : AppCompatActivity() {
+open class ActivityStepNavBar : ActivityBusinessBase<ActivityStepNavBarBinding>() {
 
-    private lateinit var mBinding: ActivityStepNavBarBinding
-
-    companion object {
-        fun jump(context: Context) {
-            context.startActivity(Intent(context, ActivityStepNavBar::class.java))
-        }
-    }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        mBinding = ActivityStepNavBarBinding.inflate(layoutInflater)
-        setContentView(mBinding.root)
+    override fun layoutResId(): Int = R.layout.activity_step_nav_bar
+    override fun initView() {
+        super.initView()
         mBinding.toolbar.setNavigationIcon(R.drawable.nav_back)
         mBinding.toolbar.title = "StepNavBar"
         mBinding.toolbar.setTitleTextColor(ResourcesCompat.getColor(resources, R.color.white, null))
-
-
         setSupportActionBar(mBinding.toolbar)
         mBinding.toolbar.setNavigationOnClickListener { finish() }
         val steps = arrayOf("Step1", "Step2", "Step3", "Step4", "Step5")
@@ -55,6 +40,7 @@ open class ActivityStepNavBar : AppCompatActivity() {
             }
 
         })
-
     }
+
+
 }

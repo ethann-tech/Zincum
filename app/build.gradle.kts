@@ -1,3 +1,5 @@
+@file:Suppress("UnstableApiUsage")
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -28,7 +30,10 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
+    dexOptions {
+        javaMaxHeapSize ="4g"
 
+    }
     buildFeatures {
         viewBinding = false
         dataBinding = true
@@ -38,19 +43,26 @@ android {
 dependencies {
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.multidex)
     implementation(libs.androidx.core)
     implementation(libs.androidx.material)
-
+    implementation(libs.androidx.guava)
     testImplementation(libs.test.junit)
     androidTestImplementation(libs.test.android.ext)
     androidTestImplementation(libs.test.android.espresso)
     implementation(libs.baserecyclerviewadapterhelper)
-    implementation(libs.androidx.datastore.preferences)
-    implementation(libs.androidx.datastore.preferences.core)
-    implementation(libs.androidx.datastore.preferences.rxjava3)
+    implementation(libs.ultimatebarx)
+    implementation(libs.bundles.datastore)
+    implementation(libs.bundles.androidx.lifecycle.group)
+    implementation(libs.bundles.koin)
+    implementation(libs.bundles.commons)
+    implementation(libs.bundles.logback)
+    implementation(libs.bundles.qmui)
+    kapt(libs.qmuiteam.arch.compiler)
+    implementation(libs.rxkotlin)
+    implementation(libs.rxlifecycle.lifecycle.kotlin)
+
     implementation(libs.gson)
-    implementation(libs.slf4j.api)
-    implementation(libs.logback.android)
     implementation(libs.recyclerview.flexibledivider)
     implementation(libs.androidx.viewpage2)
     implementation(libs.flowhelper)

@@ -1,26 +1,15 @@
 package com.ethan.demo.ui.activity
 
-import android.content.Context
-import android.content.Intent
-import android.os.Bundle
 import com.ethan.demo.R
-import com.ethan.demo.base.ActivityBase
+import com.ethan.demo.base.ActivityBusinessBase
 import com.ethan.demo.databinding.ActivityLoadingBinding
 import com.ethan.zincum.dialog.IOSLoadingDialog
 
-class ActivityLoading : ActivityBase() {
-    private lateinit var mBinding: ActivityLoadingBinding
+class ActivityLoading : ActivityBusinessBase<ActivityLoadingBinding>() {
 
-    companion object {
-        fun jump(context: Context) {
-            context.startActivity(Intent(context, ActivityLoading::class.java))
-        }
-    }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        mBinding = ActivityLoadingBinding.inflate(layoutInflater)
-        setContentView(mBinding.root)
+    override fun layoutResId(): Int =R.layout.activity_loading
+    override fun initView() {
+        super.initView()
         mBinding.includeToolbar.mToolbar.title = "Loading"
         setSupportActionBar(mBinding.includeToolbar.mToolbar)
         mBinding.includeToolbar.mToolbar.setNavigationIcon(R.drawable.nav_back)
@@ -30,4 +19,5 @@ class ActivityLoading : ActivityBase() {
             val dialog = IOSLoadingDialog().setOnTouchOutside(true).showNow(supportFragmentManager, "IosLoadingDialog")
         }
     }
+
 }

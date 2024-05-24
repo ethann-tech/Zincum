@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
     <application
+        android:name=".apps.App"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -43,13 +46,23 @@
         <activity
             android:name=".ui.activity.ActivitySticky"
             android:exported="false" />
+        <activity android:name=".ui.activity.ActivityContextExt" />
         <!-- 设备信息-->
         <activity
             android:name=".ui.activity.ActivityDeviceInfo"
             android:exported="true" />
-        <activity android:name=".ui.activity.ActivityLoading" android:exported="false" />
-        <activity android:name=".ui.activity.ActivityTest" android:exported="false"/>
-        <activity android:name=".ui.activity.ActivityExtension" android:exported="false"/>
-     </application>
+        <activity
+            android:name=".ui.activity.ActivityLoading"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.ActivityTest"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.ActivityExtension"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.ActivityTextView"
+            android:exported="false" />
+    </application>
 
 </manifest>

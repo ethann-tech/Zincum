@@ -9,8 +9,8 @@ packageNameLibrary = "com.ethan.zincum"
 
 #compose
 kotlinCompilerVersion = "1.5.0"
-agp = "8.1.2"
-org-jetbrains-kotlin-android = "1.9.0"
+agp = "8.1.4"
+org-jetbrains-kotlin-android = "1.9.23"
 core-ktx = "1.12.0"
 junit = "4.13.2"
 androidx-test-ext-junit = "1.1.5"
@@ -27,57 +27,59 @@ ethan-kotlin-android-extension ="1.0.6"
 #
 androidx-core = 'androidx.core:core-ktx:1.12.0'
 androidx-appcompat = 'androidx.appcompat:appcompat:1.6.1'
-androidx-material = 'com.google.android.material:material:1.10.0'
+androidx-material = 'com.google.android.material:material:1.11.0'
 androidx-constraintlayout = 'androidx.constraintlayout:constraintlayout:2.1.4'
 androidx-multidex = 'androidx.multidex:multidex:2.0.1'
-androidx-lifecycle-livedata = 'androidx.lifecycle:lifecycle-livedata:2.6.1'
-androidx-lifecycle-runtime-ktx = 'androidx.lifecycle:lifecycle-runtime-ktx:2.6.1'
-androidx-lifecycle-livedata-ktx = 'androidx.lifecycle:lifecycle-livedata-ktx:2.6.1'
-androidx-lifecycle-viewmodel = 'androidx.lifecycle:lifecycle-viewmodel:2.6.1'
-androidx-lifecycle-viewmodel-ktx = 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1'
+androidx-lifecycle-livedata = 'androidx.lifecycle:lifecycle-livedata:2.7.0'
+androidx-lifecycle-runtime-ktx = 'androidx.lifecycle:lifecycle-runtime-ktx:2.7.0'
+androidx-lifecycle-livedata-ktx = 'androidx.lifecycle:lifecycle-livedata-ktx:2.7.0'
+androidx-lifecycle-viewmodel = 'androidx.lifecycle:lifecycle-viewmodel:2.7.0'
+androidx-lifecycle-viewmodel-ktx = 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0'
 androidx-lifecycle-extensions = 'androidx.lifecycle:lifecycle-extensions:2.2.0'
 
 androidx-datastore-preferences='androidx.datastore:datastore-preferences:1.0.0'
 androidx-datastore-preferences-core='androidx.datastore:datastore-preferences-core:1.0.0'
 androidx-datastore-preferences-rxjava3='androidx.datastore:datastore-preferences-rxjava3:1.0.0'
-androidx-navigation-fragment-ktx = 'androidx.navigation:navigation-fragment-ktx:2.6.0'
-androidx-navigation-ui-ktx = 'androidx.navigation:navigation-ui-ktx:2.6.0'
+androidx-navigation-fragment-ktx = 'androidx.navigation:navigation-fragment-ktx:2.7.7'
+androidx-navigation-ui-ktx = 'androidx.navigation:navigation-ui-ktx:2.7.7'
 androidx-splashscreen = 'androidx.core:core-splashscreen:1.0.1'
 androidx-guava='com.google.guava:guava:30.1.1-android'
 androidx-viewpage2='androidx.viewpager2:viewpager2:1.0.0'
-androidx-webkit='androidx.webkit:webkit:1.3.0'
+androidx-webkit='androidx.webkit:webkit:1.10.0'
 androidx-legacy='androidx.legacy:legacy-support-v4:1.0.0'
 
-androidx-room-compiler = 'androidx.room:room-compiler:2.5.1' # kapt
-androidx-room-ktx = 'androidx.room:room-ktx:2.5.1'
-androidx-room-rxjava = 'androidx.room:room-rxjava2:2.5.1'
-androidx-room-runtime = 'androidx.room:room-runtime:2.5.1'
-androidx-room-guava = 'androidx.room:room-guava:2.5.1'
-androidx-room-testing = 'androidx.room:room-testing:2.5.1'
+androidx-room-compiler = 'androidx.room:room-compiler:2.6.1' # kapt
+androidx-room-ktx = 'androidx.room:room-ktx:2.6.1'
+androidx-room-rxjava = 'androidx.room:room-rxjava2:2.6.1'
+androidx-room-runtime = 'androidx.room:room-runtime:2.6.1'
+androidx-room-guava = 'androidx.room:room-guava:2.6.1'
+androidx-room-testing = 'androidx.room:room-testing:2.6.1'
 
-kotlinx-coroutines-android = 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.1'
-kotlin-stdlib = 'org.jetbrains.kotlin:kotlin-stdlib:1.9.10'
+kotlinx-coroutines-android = 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3'
+kotlin-stdlib = 'org.jetbrains.kotlin:kotlin-stdlib:1.9.23'
+#
 # test
+#
 test-junit = 'junit:junit:4.13.2'
 test-android-ext = 'androidx.test.ext:junit:1.1.5'
 test-android-espresso = 'androidx.test.espresso:espresso-core:3.5.1'
 
 
-androidx-activity-compose = 'androidx.activity:activity-compose:1.7.0'
-androidx-compose-ui = 'androidx.compose.ui:ui:1.4.0'
-androidx-compose-runtime ='androidx.compose.runtime:runtime:1.5.0-alpha01'
-androidx-compose-ui-graphics = 'androidx.compose.ui:ui-graphics:1.4.0'
-androidx-compose-ui-tooling-preview = 'androidx.compose.ui:ui-tooling-preview:1.4.0'
-androidx-compose-material3 = 'androidx.compose.material3:material3:1.0.1'
-androidx-compose-ui-test-junit4 = 'androidx.compose.ui:ui-test-junit4:1.4.0' # androidTestImplementation
-androidx-compose-ui-tooling = 'androidx.compose.ui:ui-tooling:1.4.0' # debugImplementation
-androidx-compose-ui-test-manifest = 'androidx.compose.ui:ui-test-manifest:1.4.0'# debugImplementation
-
+androidx-activity-compose = 'androidx.activity:activity-compose:1.8.2'
+androidx-compose-ui = 'androidx.compose.ui:ui:1.6.5'
+androidx-compose-runtime ='androidx.compose.runtime:runtime:1.6.5'
+androidx-compose-ui-graphics = 'androidx.compose.ui:ui-graphics:1.6.5'
+androidx-compose-ui-tooling-preview = 'androidx.compose.ui:ui-tooling-preview:1.6.5'
+androidx-compose-material3 = 'androidx.compose.material3:material3:1.2.1'
+androidx-compose-ui-test-junit4 = 'androidx.compose.ui:ui-test-junit4:1.6.5' # androidTestImplementation
+androidx-compose-ui-tooling = 'androidx.compose.ui:ui-tooling:1.6.5' # debugImplementation
+androidx-compose-ui-test-manifest = 'androidx.compose.ui:ui-test-manifest:1.6.5'# debugImplementation
+#
 # https://developer.android.com/training/dependency-injection/hilt-android?hl=zh-cn#kts
-google-hilt-android = 'com.google.dagger:hilt-android:2.48'
+#
+google-hilt-android = 'com.google.dagger:hilt-android:2.48.1'
 google-hilt-android-compiler = 'com.google.dagger:hilt-android-compiler:2.48' # kapt
 
-jetbrains-annotations = 'org.jetbrains:annotations:24.0.1'
 
 # 必备
 okhttp3-okhttp = 'com.squareup.okhttp3:okhttp:5.0.0-alpha.6'
@@ -95,7 +97,14 @@ rxbinding="com.jakewharton.rxbinding4:rxbinding:4.0.0"
 rxbinding-core="com.jakewharton.rxbinding4:rxbinding-core:4.0.0"
 rxbinding-appcompat ="com.jakewharton.rxbinding4:rxbinding-appcompat:4.0.0"
 rxjava3-rxandroid = 'io.reactivex.rxjava3:rxandroid:3.0.2'
-rxjava3-rxjava = 'io.reactivex.rxjava3:rxjava:3.1.5'
+rxjava3-rxjava = 'io.reactivex.rxjava3:rxjava:3.1.8'
+
+#
+# koin
+#
+koin-android = 'io.insert-koin:koin-android:3.5.0'
+koin-compat  = 'io.insert-koin:koin-android-compat:3.3.2'
+
 # viewbinding
 viewbinding-ktx = 'com.github.DylanCaiCoding.ViewBindingKTX:viewbinding-ktx:2.1.0'
 
@@ -115,25 +124,21 @@ commons-io = 'commons-io:commons-io:2.4'
 commons-lang = 'org.apache.commons:commons-lang3:3.12.0'
 commons-compress = 'org.apache.commons:commons-compress:1.12'
 
-greenrobot-eventbus = 'org.greenrobot:eventbus:3.3.1'
+
 # 日志框架
 slf4j-api = 'org.slf4j:slf4j-api:2.0.9'
 logback-android = 'com.github.tony19:logback-android:3.0.0'
-
 #logback-classic ='ch.qos.logback:logback-classic:1.2.11'
+
 # 权限管理
 permissions-xxpermissions = 'com.github.getActivity:XXPermissions:18.0'
-permissions-nopermission = 'ru.alexbykov:nopermission:1.1.2'
+
 ## 状态栏沉浸
 ultimatebarx = 'com.gitee.zackratos:UltimateBarX:0.8.0'
 
 # https://github.com/CymChad/BaseRecyclerViewAdapterHelper/wiki
 baserecyclerviewadapterhelper = 'io.github.cymchad:BaseRecyclerViewAdapterHelper:4.0.1'
 recyclerview-flexibledivider = 'com.github.ethaannn:RecyclerView-FlexibleDivider:1.4.1'
-xrecyclerview = 'com.jcodecraeer:xrecyclerview:1.6.0'
-
-
-
 
 ############################################################################################
 # https://github.com/ssseasonnn/Butterfly/blob/master/README.zh.md
@@ -146,8 +151,8 @@ arouter-api = 'com.alibaba:arouter-api:1.5.2'
 arouter-compiler = 'com.alibaba:arouter-compiler:1.5.2' #kapt
 #############################################################################################
 # qmui
-qmuiteam-qmui = 'com.qmuiteam:qmui:2.0.1'
-qmuiteam-arch = 'com.qmuiteam:arch:2.0.1'
+qmuiteam-qmui = 'com.qmuiteam:qmui:2.1.0'
+qmuiteam-arch = 'com.qmuiteam:arch:2.1.0'
 qmuiteam-arch-compiler = 'com.qmuiteam:arch-compiler:2.0.1' # kapt
 tencent-mmkv-static = 'com.tencent:mmkv-static:1.2.14'
 
@@ -168,8 +173,8 @@ umsdk-abtest = 'com.umeng.umsdk:abtest:1.0.0'
 base-popup = 'io.github.razerdp:BasePopup:3.2.1'
 toaster = 'com.github.getActivity:Toaster:12.3'
 flowhelper='com.github.ethaannn:FlowHelper:v1.30'
-# https://github.com/H07000223/FlycoTabLayout/blob/master/README_CN.md
-flycotablayout='io.github.h07000223:flycoTabLayout:3.0.0'
+
+flycotablayout='io.github.h07000223:flycoTabLayout:3.0.0' # # https://github.com/H07000223/FlycoTabLayout/blob/master/README_CN.md
 dsltablayout = 'com.github.angcyo.DslTablayout:TabLayout:3.5.5'
 dsltablayout-delegateforviewpage2 = 'com.github.angcyo.DslTablayout:ViewPager2Delegate:3.5.5'
 # 下拉刷新
@@ -177,11 +182,11 @@ refresh-kernel='com.scwang.smart:refresh-layout-kernel:2.0.3'
 refresh-header-classics='com.scwang.smart:refresh-header-classics:2.0.3'
 refresh-footer-classics='com.scwang.smart:refresh-footer-classics:2.0.3'
 
-xbanner='com.github.xiaohaibin:XBanner:androidx_v1.2.6'
-banner2='io.github.youth5201314:banner:2.2.2'
-mmkv='com.tencent:mmkv-static:1.2.10'
+
+banner2='io.github.youth5201314:banner:2.2.3'
+mmkv='com.tencent:mmkv-static:1.2.14'
 leakcanary-android = 'com.squareup.leakcanary:leakcanary-android:2.10' # debugImplementation
-platform-androidx-compose-bom = "androidx.compose:compose-bom:2023.03.00"
+platform-androidx-compose-bom = "androidx.compose:compose-bom:2024.04.00"
 
 legacy-support-v4 = { group = "androidx.legacy", name = "legacy-support-v4", version.ref = "legacy-support-v4" }
 ethan-kotlin-android-extension ={ group ="com.github.ethann-tech",name ="kotlin-android-extension",version.ref ="ethan-kotlin-android-extension"}
@@ -190,4 +195,13 @@ ethan-kotlin-android-extension ={ group ="com.github.ethann-tech",name ="kotlin-
 [plugins]
 com-android-library = { id = "com.android.library", version.ref = "agp" }
 org-jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "org-jetbrains-kotlin-android" }
+
+[bundles]
+koin        = ['koin-android', 'koin-compat']
+logback     = ['slf4j-api', 'logback-android']
+commons     = ['commons-io', 'commons-lang', 'commons-compress']
+qmui        = ['qmuiteam-qmui', 'qmuiteam-arch']
+
+datastore   = ['androidx-datastore-preferences', 'androidx-datastore-preferences-core', 'androidx-datastore-preferences-rxjava3']
+androidx-lifecycle-group=['androidx-lifecycle-livedata','androidx-lifecycle-runtime-ktx','androidx-lifecycle-livedata-ktx','androidx-lifecycle-viewmodel','androidx-lifecycle-viewmodel-ktx','androidx-lifecycle-extensions']
 

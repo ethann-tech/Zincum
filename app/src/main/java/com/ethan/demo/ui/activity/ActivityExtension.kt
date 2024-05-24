@@ -17,23 +17,18 @@
 
 package com.ethan.demo.ui.activity
 
-import android.content.Context
-import android.content.Intent
 import android.os.Build
-import android.os.Bundle
 import android.view.View
-import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.ethan.demo.R
+import com.ethan.demo.base.ActivityBusinessBase
 import com.ethan.demo.databinding.ActivityExtensionBinding
 import com.ethan.zincum.listener.OnMultiClickListener
 import io.github.uhsk.kit.android.dataStore
 import io.github.uhsk.kit.android.dp2px
-import io.github.uhsk.kit.android.obtainDrawable
 import io.github.uhsk.kit.android.px2dp
 import io.github.uhsk.kit.android.px2sp
 import io.github.uhsk.kit.android.sp2px
-import io.github.uhsk.kit.android.view.backgroundDrawable
 import io.github.uhsk.kit.android.view.imageResource
 import io.github.uhsk.kit.android.view.setOnMultiClickListener
 import io.github.uhsk.kit.jetpack.datastore.getBoolean
@@ -52,39 +47,30 @@ import io.github.uhsk.kit.jetpack.datastore.putSetString
 import io.github.uhsk.kit.jetpack.datastore.putString
 import kotlinx.coroutines.launch
 
-class ActivityExtension : AppCompatActivity(), View.OnClickListener {
-    private lateinit var mContext: Context
-    private lateinit var mViewBinding: ActivityExtensionBinding
+class ActivityExtension : ActivityBusinessBase<ActivityExtensionBinding>(), View.OnClickListener {
 
-    companion object {
-        fun jump(context: Context) {
-            context.startActivity(Intent(context, ActivityExtension::class.java))
-        }
-    }
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        mContext = this
-        mViewBinding = ActivityExtensionBinding.inflate(layoutInflater)
-        setContentView(mViewBinding.root)
-        mViewBinding.btnContextTest.setOnClickListener(this)
+    override fun layoutResId(): Int = R.layout.activity_extension
+    override fun initView() {
+        super.initView()
+        mBinding.btnContextTest.setOnClickListener(this)
 //        mViewBinding.btnContextTest.apply {
 //            backgroundResource =R.drawable.ic_launcher_background
 //            backgroundDrawable = context.obtainDrawable(R.drawable.ic_launcher_background)
 //            backgroundDrawable = context.obtainDrawable(R.drawable.ic_launcher_background)
 //        }
 
-        mViewBinding.btnContextTest1.apply {
+        mBinding.btnContextTest1.apply {
             setBackgroundResource(R.color.teal_200)
         }
-        mViewBinding.image.apply {
+        mBinding.image.apply {
 //            imageDrawable =context.obtainDrawable(R.drawable.ic_launcher_background)
-            imageResource=R.drawable.ic_launcher_background
+            imageResource = R.drawable.ic_launcher_background
         }
 
 
-        mViewBinding.btnDataStoreSave.setOnClickListener {
+        mBinding.btnDataStoreSave.setOnClickListener {
             lifecycleScope.launch {
-                println(  mContext.dataStore.hashCode())
+                println(mContext.dataStore.hashCode())
                 mContext.dataStore.putInt(key = "age", value = 30)
                 mContext.dataStore.putBoolean(key = "isHaveMoney", true)
                 mContext.dataStore.putDouble(key = "money", value = 312345.345)
@@ -94,7 +80,7 @@ class ActivityExtension : AppCompatActivity(), View.OnClickListener {
                 mContext.dataStore.putSetString("set", setOf("1", "2", "3"))
             }
         }
-        mViewBinding.btnDataStoreGet.setOnClickListener {
+        mBinding.btnDataStoreGet.setOnClickListener {
             lifecycleScope.launch {
                 println(mContext.dataStore.getInt(key = "age"))
                 println(mContext.dataStore.getBoolean(key = "isHaveMoney"))
@@ -103,17 +89,17 @@ class ActivityExtension : AppCompatActivity(), View.OnClickListener {
                 println(mContext.dataStore.getFloat("float"))
                 println(mContext.dataStore.getString("test"))
                 println(mContext.dataStore.getSetString("set"))
-                println(  mContext.dataStore.hashCode())
+                println(mContext.dataStore.hashCode())
 
             }
         }
 
-        mViewBinding.btnMulti.setOnClickListener(object : OnMultiClickListener(clickCount = 5, clickDuration = 3000){
+        mBinding.btnMulti.setOnClickListener(object : OnMultiClickListener(clickCount = 5, clickDuration = 3000) {
             override fun onMultiClick(v: View) {
 
             }
         })
-        mViewBinding.btnMulti.setOnMultiClickListener (clickCount = 5, clickDuration = 2000,isClearHits = false){
+        mBinding.btnMulti.setOnMultiClickListener(clickCount = 5, clickDuration = 2000, isClearHits = false) {
             println("在两秒内连续点击了5次")
         }
     }
@@ -121,7 +107,7 @@ class ActivityExtension : AppCompatActivity(), View.OnClickListener {
 
     override fun onClick(v: View?) {
         when (v) {
-            mViewBinding.btnContextTest -> onClickButtonTest(v)
+            mBinding.btnContextTest -> onClickButtonTest(v)
         }
     }
 

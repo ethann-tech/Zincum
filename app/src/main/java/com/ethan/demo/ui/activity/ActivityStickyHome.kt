@@ -1,48 +1,34 @@
 package com.ethan.demo.ui.activity
 
-import android.content.Context
-import android.content.Intent
-import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.ethan.demo.R
 import com.ethan.demo.adapter.AdapterStickyRv
+import com.ethan.demo.base.ActivityBusinessBase
 import com.ethan.demo.databinding.ActivityStickHomeBinding
 
-class ActivityStickyHome : AppCompatActivity() {
-    private lateinit var mBinding: ActivityStickHomeBinding
-    private val mAdapter by lazy {
-        AdapterStickyRv()
-    }
+class ActivityStickyHome : ActivityBusinessBase<ActivityStickHomeBinding>() {
+    private val mAdapter by lazy { AdapterStickyRv() }
 
-    companion object {
-        fun jump(context: Context) {
-            context.startActivity(Intent(context, ActivityStickyHome::class.java))
-        }
-    }
+    override fun layoutResId(): Int = R.layout.activity_stick_home
 
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        mBinding = ActivityStickHomeBinding.inflate(layoutInflater)
-        setContentView(mBinding.root)
-
-
+    override fun initView() {
+        super.initView()
         mBinding.recyclerView.apply {
             adapter = mAdapter
             layoutManager = LinearLayoutManager(context)
         }
         initRvData()
-
-        mAdapter.setOnItemClickListener { adapter, view, position -> run {
+        mAdapter.setOnItemClickListener { adapter, view, position ->
+            run {
                 when (position) {
                     0 -> {
-                        ActivitySticky.jump(this)
+                        jump(this, ActivityStickyHome::class.java)
                     }
                 }
             }
         }
     }
-
 
     private fun initRvData() {
         val list = mutableListOf<String>()
