@@ -16,6 +16,7 @@
 package com.ethan.zincum.base
 
 import android.content.Context
+import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.view.WindowManager
@@ -30,7 +31,11 @@ abstract class ActivityCore : AppCompatActivity() {
      */
     private var isAllowScreenRotate = false
     protected lateinit var mContext: Context
-
+    companion object {
+        fun jump(context: Context, cls: Class<*>) {
+            context.startActivity(Intent(context, cls))
+        }
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mContext = this

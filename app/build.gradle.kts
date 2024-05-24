@@ -30,7 +30,10 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
+    dexOptions {
+        javaMaxHeapSize ="4g"
 
+    }
     buildFeatures {
         viewBinding = false
         dataBinding = true

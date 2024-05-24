@@ -18,6 +18,7 @@
 package io.github.uhsk.kit.android
 
 import android.Manifest
+import android.annotation.SuppressLint
 import android.content.ClipboardManager
 import android.content.Context
 import android.content.Intent
@@ -31,6 +32,7 @@ import android.net.Uri
 import android.os.Build
 import android.os.Environment
 import android.provider.Settings
+import android.util.DisplayMetrics
 import android.widget.Toast
 import androidx.annotation.ColorRes
 import androidx.annotation.DrawableRes
@@ -219,13 +221,6 @@ fun Context.startActivityForShareText(value: String, title: String = "", block: 
     this.startActivity(Intent.createChooser(intent, title))
 }
 
-fun Context.startActivityForShareImage(block: (Intent.() -> Unit)? = null) {
-    TODO("Not yet implemented")
-}
-
-fun Context.startActivityForShareFile(block: (Intent.() -> Unit)? = null) {
-    TODO("Not yet implemented")
-}
 
 /**
  * 显示卸载app对话框
@@ -290,6 +285,7 @@ fun Context.showToast(@StringRes resId: Int, duration: Int = Toast.LENGTH_LONG) 
  * @since 1.0.3
  * @author sollyu
  */
+@Deprecated(message = "请使用Number类的扩展函数", replaceWith = ReplaceWith(expression = "请使用Number类的扩展函数", imports = arrayOf("io.github.uhsk.kit.android.dp2px")))
 fun Context.dp2px(dp: Int): Int {
     return (density * dp + 0.5).toInt()
 }
@@ -307,6 +303,7 @@ fun Context.sp2px(sp: Int): Int {
  * @since 1.0.3
  * @author sollyu
  */
+@Deprecated(message = "请使用Number类的扩展函数", replaceWith = ReplaceWith(expression = "请使用Number类的扩展函数", imports = arrayOf("io.github.uhsk.kit.android.px2dp")))
 fun Context.px2dp(px: Int): Int {
     return (px / density + 0.5).toInt()
 }
@@ -315,6 +312,7 @@ fun Context.px2dp(px: Int): Int {
  * @since 1.0.3
  * @author sollyu
  */
+@Deprecated(message = "请使用Number类的扩展函数", replaceWith = ReplaceWith(expression = "请使用Number类的扩展函数", imports = arrayOf("io.github.uhsk.kit.android.px2sp")))
 fun Context.px2sp(px: Int): Int {
     return (px / fontDensity + 0.5).toInt()
 }
@@ -323,6 +321,7 @@ fun Context.px2sp(px: Int): Int {
  * @since 1.0.11
  * @author sollyu
  */
+@Deprecated(message = "请使用Configuration类的扩展函数", replaceWith = ReplaceWith(expression = "请使用Configuration类的扩展函数", imports = arrayOf("io.github.uhsk.kit.android.isLandscape")))
 fun Context.isLandscape(): Boolean {
     return this.resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE
 }
@@ -378,12 +377,19 @@ fun Context.getMinVolume(@AudioServiceStreamType type: Int = AudioManager.STREAM
 fun Context.setVolume(value: Int, @AudioServiceStreamType type: Int = AudioManager.STREAM_MUSIC, @AudioServiceStreamFlags flags: Int = AudioManager.FLAG_SHOW_UI) {
     this.getSystemServiceForAudioService().setStreamVolume(type, value, flags)
 }
+
+/**
+ * 获取版本名
+ */
 fun Context.getVersionName(): String = try {
-    val manager = this.packageManager
-    manager.getPackageInfo(this.packageName, 0).versionName
+    this.packageManager.getPackageInfo(this.packageName, 0).versionName
 } catch (e: PackageManager.NameNotFoundException) {
     ""
 }
+
+/**
+ * 获取版本号
+ */
 fun Context.getVersionCode(): Int = try {
     val manager = this.packageManager
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
@@ -407,7 +413,7 @@ fun Context.getPathOfExternalDownload(): File? {
 /**
  * @since 1.0.11
  * @author sollyu
- * @sample /storage/emulated/0/Android/data/package/files/Download
+ * @sample /storage/emulated/0/Android/data/package/files/DCIM
  */
 fun Context.getPathOfExternalDcim(): File? {
     return this.getExternalFilesDir(Environment.DIRECTORY_DCIM)
@@ -467,7 +473,7 @@ val Context.fontDensity: Float
  */
 
 val Context.screenWidth: Int
-    get() =  if (isPortrait()) this.resources.displayMetrics.widthPixels else this.resources.displayMetrics.heightPixels
+    get() = if (isPortrait()) this.resources.displayMetrics.widthPixels else this.resources.displayMetrics.heightPixels
 
 /**
  * 当前屏幕的高度
@@ -476,7 +482,7 @@ val Context.screenWidth: Int
  * @author Ethan
  */
 val Context.screenHeight: Int
-    get() =  if (isPortrait()) this.resources.displayMetrics.heightPixels else this.resources.displayMetrics.widthPixels
+    get() = if (isPortrait()) this.resources.displayMetrics.heightPixels else this.resources.displayMetrics.widthPixels
 
 val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "config_settings")
 
@@ -487,7 +493,7 @@ val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "co
  * @param color 颜色值
  * @return 颜色值
  */
-fun Context.obtainColor(@ColorRes color:Int):Int = color.asColor(this)
+fun Context.obtainColor(@ColorRes color: Int): Int = color.asColor(this)
 
 
 /**
@@ -519,4 +525,132 @@ fun Context.readAssetFile(path: String): String {
         e.printStackTrace()
     }
     return builder.toString()
+}
+
+
+/**
+ * 设置屏幕密度
+ *
+ * @see [Context#attachBaseContext]
+ */
+@Suppress(names = ["DEPRECATION"])
+internal fun Context.updateDensityDpi(density: Int = DisplayMetrics.DENSITY_DEFAULT) {
+    val resources: Resources = this.resources
+    val configuration: Configuration = resources.configuration
+    val displayMetrics: DisplayMetrics = resources.displayMetrics
+    displayMetrics.densityDpi = density
+    configuration.densityDpi = density
+    resources.updateConfiguration(configuration, displayMetrics)
+}
+
+/**
+ * 检查通知是否启用
+ */
+internal fun Context.isNotificationsEnabled(): Boolean {
+    return androidx.core.app.NotificationManagerCompat.from(this).areNotificationsEnabled()
+}
+
+/**
+ * 检查是否启用模拟位置
+ */
+@Suppress(names = ["DEPRECATION"])
+internal fun Context.isDeveloperMockLocationEnabled(): Boolean {
+    val appOpsManager: android.app.AppOpsManager = this.getSystemService(Context.APP_OPS_SERVICE) as android.app.AppOpsManager
+    val mode: Int = appOpsManager.checkOpNoThrow(android.app.AppOpsManager.OPSTR_MOCK_LOCATION, android.os.Process.myUid(), this.packageName)
+    return mode == android.app.AppOpsManager.MODE_ALLOWED
+}
+
+/**
+ * 检查是否忽略电池优化
+ */
+@RequiresApi(Build.VERSION_CODES.M)
+internal fun Context.isIgnoringBatteryOptimizations(): Boolean {
+    val powerManager: android.os.PowerManager = this.getSystemService(Context.POWER_SERVICE) as android.os.PowerManager
+    return powerManager.isIgnoringBatteryOptimizations(this.packageName)
+}
+
+/**
+ * 检查服务是否运行
+ */
+@Suppress(names = ["DEPRECATION"])
+internal fun Context.isServiceRunning(serviceClass: Class<*>): Boolean {
+    val activityManager: android.app.ActivityManager = this.getSystemService(Context.ACTIVITY_SERVICE) as android.app.ActivityManager
+    return activityManager.getRunningServices(Int.MAX_VALUE).any { serviceClass.name == it.service.className }
+}
+
+/**
+ * 当前是否为夜间模式
+ */
+internal fun Context.isUiModeNight(): Boolean {
+    return when (resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK) {
+        Configuration.UI_MODE_NIGHT_YES -> true
+        Configuration.UI_MODE_NIGHT_NO  -> false
+        else                            -> false
+    }
+}
+
+/**
+ * 启动系统设置页面-通知
+ */
+internal fun Context.startActivityForSystemSettingsByNotifications() {
+    val intent: Intent = Intent()
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+        intent.setAction(Settings.ACTION_APP_NOTIFICATION_SETTINGS)
+        intent.putExtra(Settings.EXTRA_APP_PACKAGE, packageName)
+        intent.putExtra(Settings.EXTRA_CHANNEL_ID, applicationInfo.uid)
+    } else {
+        intent.putExtra("app_package", packageName)
+        intent.putExtra("app_uid", applicationInfo.uid)
+    }
+    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+    startActivity(intent)
+}
+
+/**
+ * 启动系统设置页面-开发者选项
+ */
+internal fun Context.startActivityForSystemSettingsByDeveloper() {
+    val intent: Intent = Intent(Settings.ACTION_APPLICATION_DEVELOPMENT_SETTINGS)
+    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+    startActivity(intent)
+}
+
+/**
+ * 启动系统设置页面-WIFI
+ */
+internal fun Context.startActivityForSystemSettingsByWifi() {
+    val intent: Intent = Intent(Settings.ACTION_WIFI_SETTINGS)
+    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+    startActivity(intent)
+}
+
+/**
+ * 启动系统设置页面-定位
+ */
+internal fun Context.startActivityForSystemSettingsByLocation() {
+    val intent: Intent = Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS)
+    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+    startActivity(intent)
+}
+
+
+/**
+ * 启动系统设置页面-定位
+ */
+internal fun Context.startActivityForSystemSettingsByBluetooth() {
+    val intent: Intent = Intent(Settings.ACTION_BLUETOOTH_SETTINGS)
+    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+    startActivity(intent)
+}
+
+
+/**
+ * 启动系统设置页面-电池优化
+ */
+@SuppressLint("BatteryLife")
+internal fun Context.startActivityForSystemSettingsByBatteryOptimization() {
+    val intent: Intent = Intent(Settings.ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS)
+    intent.data = Uri.parse("package:$packageName")
+    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+    startActivity(intent)
 }
