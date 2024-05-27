@@ -28,6 +28,7 @@ class MainActivity : ActivityBusinessBase<ActivityMainBinding>() {
         MainItemBean(text = "组件")
     )
 
+    override fun layoutResId(): Int =R.layout.activity_main
     private val mainAdapter by lazy { MainAdapter() }
 
     override fun initView() {

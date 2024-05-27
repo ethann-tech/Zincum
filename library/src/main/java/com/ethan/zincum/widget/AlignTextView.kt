@@ -1,88 +1,80 @@
-package com.ethan.zincum.widget;
+package com.ethan.zincum.widget
 
-import android.content.Context;
-import android.content.res.TypedArray;
-import android.graphics.Canvas;
-import android.text.Layout;
-import android.text.StaticLayout;
-import android.util.AttributeSet;
+import android.content.Context
+import android.graphics.Canvas
+import android.text.StaticLayout
+import android.util.AttributeSet
+import androidx.appcompat.widget.AppCompatTextView
+import com.ethan.zincum.R
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.widget.AppCompatTextView;
+class AlignTextView(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : AppCompatTextView(context, attrs, defStyleAttr) {
+    private var alignOnlyOneLine = false
 
-import com.ethan.zincum.R;
+    @JvmOverloads
+    constructor(context: Context, attrs: AttributeSet? = null) : this(context, attrs, 0)
 
-public class AlignTextView extends AppCompatTextView {
 
-    private boolean alignOnlyOneLine;
-
-    public AlignTextView(Context context) {
-        this(context, null);
+    init {
+        init(context, attrs)
     }
 
-    public AlignTextView(Context context, @Nullable AttributeSet attrs) {
-        this(context, attrs, 0);
+    private fun init(context: Context, attrs: AttributeSet?) {
+        val typedArray = context.obtainStyledAttributes(attrs, R.styleable.AlignTextView)
+        alignOnlyOneLine = typedArray.getBoolean(R.styleable.AlignTextView_alignOnlyOneLine, false)
+        typedArray.recycle()
     }
 
-    public AlignTextView(Context context, AttributeSet attrs, int defStyleAttr) {
-        super(context, attrs, defStyleAttr);
-        init(context, attrs);
-    }
-
-    private void init(Context context, AttributeSet attrs) {
-        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.AlignTextView);
-        alignOnlyOneLine = typedArray.getBoolean(R.styleable.AlignTextView_alignOnlyOneLine, false);
-        typedArray.recycle();
-    }
-
-    protected void onDraw(Canvas canvas) {
-        CharSequence content = getText();
-        if (!(content instanceof String)) {
-            super.onDraw(canvas);
-            return;
+    override fun onDraw(canvas: Canvas) {
+        val content = text
+        if (content !is String) {
+            super.onDraw(canvas)
+            return
         }
-        String text = (String) content;
-        Layout layout = getLayout();
+        val layout = layout
 
-        for (int i = 0; i < layout.getLineCount(); ++i) {
-            int lineBaseline = layout.getLineBaseline(i) + getPaddingTop();
-            int lineStart = layout.getLineStart(i);
-            int lineEnd = layout.getLineEnd(i);
-            if (alignOnlyOneLine && layout.getLineCount() == 1) {//只有一行
-                String line = text.substring(lineStart, lineEnd);
-                float width = StaticLayout.getDesiredWidth(text, lineStart, lineEnd, getPaint());
-                this.drawScaledText(canvas, line, lineBaseline, width);
-            } else if (i == layout.getLineCount() - 1) {//最后一行
-                canvas.drawText(text.substring(lineStart), getPaddingLeft(), lineBaseline, getPaint());
-                break;
-            } else {//中间行
-                String line = text.substring(lineStart, lineEnd);
-                float width = StaticLayout.getDesiredWidth(text, lineStart, lineEnd, getPaint());
-                this.drawScaledText(canvas, line, lineBaseline, width);
+        for (i in 0 until layout.lineCount) {
+            val lineBaseline = layout.getLineBaseline(i) + paddingTop
+            val lineStart = layout.getLineStart(i)
+            val lineEnd = layout.getLineEnd(i)
+            if (alignOnlyOneLine && layout.lineCount == 1) { //只有一行
+                val line = content.substring(lineStart, lineEnd)
+                val width = StaticLayout.getDesiredWidth(content, lineStart, lineEnd, paint)
+                this.drawScaledText(canvas, line, lineBaseline.toFloat(), width)
+            } else if (i == layout.lineCount - 1) { //最后一行
+                canvas.drawText(
+                    content.substring(lineStart),
+                    paddingLeft.toFloat(),
+                    lineBaseline.toFloat(),
+                    paint
+                )
+                break
+            } else { //中间行
+                val line = content.substring(lineStart, lineEnd)
+                val width = StaticLayout.getDesiredWidth(content, lineStart, lineEnd, paint)
+                this.drawScaledText(canvas, line, lineBaseline.toFloat(), width)
             }
         }
-
     }
 
-    private void drawScaledText(Canvas canvas, String line, float baseLineY, float lineWidth) {
+    private fun drawScaledText(canvas: Canvas, line: String, baseLineY: Float, lineWidth: Float) {
         if (line.isEmpty()) {
-            return;
+            return
         }
-        float x = getPaddingLeft();
-        boolean forceNextLine = line.charAt(line.length() - 1) == 10;
-        int length = line.length() - 1;
+        var x = paddingLeft.toFloat()
+        val forceNextLine = line[line.length - 1].code == 10
+        val length = line.length - 1
         if (forceNextLine || length == 0) {
-            canvas.drawText(line, x, baseLineY, getPaint());
-            return;
+            canvas.drawText(line, x, baseLineY, paint)
+            return
         }
 
-        float d = (getMeasuredWidth() - lineWidth - getPaddingLeft() - getPaddingRight()) / length;
+        val d = (measuredWidth - lineWidth - paddingLeft - paddingRight) / length
 
-        for (int i = 0; i < line.length(); ++i) {
-            String c = String.valueOf(line.charAt(i));
-            float cw = StaticLayout.getDesiredWidth(c, this.getPaint());
-            canvas.drawText(c, x, baseLineY, this.getPaint());
-            x += cw + d;
+        for (element in line) {
+            val c = element.toString()
+            val cw = StaticLayout.getDesiredWidth(c, this.paint)
+            canvas.drawText(c, x, baseLineY, this.paint)
+            x += cw + d
         }
     }
 }
