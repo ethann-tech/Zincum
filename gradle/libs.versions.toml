@@ -9,8 +9,8 @@ packageNameLibrary = "com.ethan.zincum"
 
 #compose
 kotlinCompilerVersion = "1.5.0"
-agp = "8.1.4"
-org-jetbrains-kotlin-android = "1.9.23"
+agp-version = "8.2.2"
+kotlin-android-version = "2.0.20"
 core-ktx = "1.12.0"
 junit = "4.13.2"
 androidx-test-ext-junit = "1.1.5"
@@ -18,190 +18,216 @@ espresso-core = "3.5.1"
 appcompat = "1.6.1"
 material = "1.9.0"
 legacy-support-v4 = "1.0.0"
-lifecycle-livedata-ktx = "2.6.1"
-lifecycle-viewmodel-ktx = "2.6.1"
-ethan-kotlin-android-extension ="1.0.6"
+
+ethan-kotlin-android-extension = "1.0.6"
+
+
+compose-version = "1.6.5"
+qmui-version = "2.1.0"
+mmkv-version ="1.2.14"
+room-version = "2.6.1"
+koin-version = "3.5.3"
+lifecycle-version = "2.8.5"
+datastore-version = "1.0.0"
+navigation-version = "2.7.7"
+retrofit-version = "2.9.0"
+rxbinding-version = "4.0.0"
+butterfly-version = "1.2.5"
+arouter-version = "1.5.2"
+smart-refresh-version = "2.0.3"
 [libraries]
 #
 # androidx & kotlin
 #
-androidx-core = 'androidx.core:core-ktx:1.12.0'
-androidx-appcompat = 'androidx.appcompat:appcompat:1.6.1'
-androidx-material = 'com.google.android.material:material:1.11.0'
-androidx-constraintlayout = 'androidx.constraintlayout:constraintlayout:2.1.4'
-androidx-multidex = 'androidx.multidex:multidex:2.0.1'
-androidx-lifecycle-livedata = 'androidx.lifecycle:lifecycle-livedata:2.7.0'
-androidx-lifecycle-runtime-ktx = 'androidx.lifecycle:lifecycle-runtime-ktx:2.7.0'
-androidx-lifecycle-livedata-ktx = 'androidx.lifecycle:lifecycle-livedata-ktx:2.7.0'
-androidx-lifecycle-viewmodel = 'androidx.lifecycle:lifecycle-viewmodel:2.7.0'
-androidx-lifecycle-viewmodel-ktx = 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0'
-androidx-lifecycle-extensions = 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+androidx-core                                    = 'androidx.core:core-ktx:1.13.1'
+androidx-appcompat                               = 'androidx.appcompat:appcompat:1.7.0'
+androidx-material                                = 'com.google.android.material:material:1.12.0'
+androidx-constraintlayout                        = 'androidx.constraintlayout:constraintlayout:2.1.4'
+androidx-multidex                                = 'androidx.multidex:multidex:2.0.1'
+androidx-splashscreen                            = 'androidx.core:core-splashscreen:1.0.1'
+androidx-guava                                   = 'com.google.guava:guava:30.1.1-android'
+androidx-viewpage2                               = 'androidx.viewpager2:viewpager2:1.0.0'
+androidx-webkit                                  = 'androidx.webkit:webkit:1.10.0'
+androidx-legacy                                  = 'androidx.legacy:legacy-support-v4:1.0.0'
 
-androidx-datastore-preferences='androidx.datastore:datastore-preferences:1.0.0'
-androidx-datastore-preferences-core='androidx.datastore:datastore-preferences-core:1.0.0'
-androidx-datastore-preferences-rxjava3='androidx.datastore:datastore-preferences-rxjava3:1.0.0'
-androidx-navigation-fragment-ktx = 'androidx.navigation:navigation-fragment-ktx:2.7.7'
-androidx-navigation-ui-ktx = 'androidx.navigation:navigation-ui-ktx:2.7.7'
-androidx-splashscreen = 'androidx.core:core-splashscreen:1.0.1'
-androidx-guava='com.google.guava:guava:30.1.1-android'
-androidx-viewpage2='androidx.viewpager2:viewpager2:1.0.0'
-androidx-webkit='androidx.webkit:webkit:1.10.0'
-androidx-legacy='androidx.legacy:legacy-support-v4:1.0.0'
-
-androidx-room-compiler = 'androidx.room:room-compiler:2.6.1' # kapt
-androidx-room-ktx = 'androidx.room:room-ktx:2.6.1'
-androidx-room-rxjava = 'androidx.room:room-rxjava2:2.6.1'
-androidx-room-runtime = 'androidx.room:room-runtime:2.6.1'
-androidx-room-guava = 'androidx.room:room-guava:2.6.1'
-androidx-room-testing = 'androidx.room:room-testing:2.6.1'
-
-kotlinx-coroutines-android = 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3'
-kotlin-stdlib = 'org.jetbrains.kotlin:kotlin-stdlib:1.9.23'
 #
 # test
 #
-test-junit = 'junit:junit:4.13.2'
-test-android-ext = 'androidx.test.ext:junit:1.1.5'
-test-android-espresso = 'androidx.test.espresso:espresso-core:3.5.1'
+junit                                            = 'junit:junit:4.13.2'
+junit-ext                                        = 'androidx.test.ext:junit:1.1.5'
+junit-espresso                                   = 'androidx.test.espresso:espresso-core:3.5.1'
 
 
-androidx-activity-compose = 'androidx.activity:activity-compose:1.8.2'
-androidx-compose-ui = 'androidx.compose.ui:ui:1.6.5'
-androidx-compose-runtime ='androidx.compose.runtime:runtime:1.6.5'
-androidx-compose-ui-graphics = 'androidx.compose.ui:ui-graphics:1.6.5'
-androidx-compose-ui-tooling-preview = 'androidx.compose.ui:ui-tooling-preview:1.6.5'
-androidx-compose-material3 = 'androidx.compose.material3:material3:1.2.1'
-androidx-compose-ui-test-junit4 = 'androidx.compose.ui:ui-test-junit4:1.6.5' # androidTestImplementation
-androidx-compose-ui-tooling = 'androidx.compose.ui:ui-tooling:1.6.5' # debugImplementation
-androidx-compose-ui-test-manifest = 'androidx.compose.ui:ui-test-manifest:1.6.5'# debugImplementation
+kotlinx-coroutines-android                       = 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0'
+kotlin-stdlib                                    = 'org.jetbrains.kotlin:kotlin-stdlib:2.0.20'
+
 #
 # https://developer.android.com/training/dependency-injection/hilt-android?hl=zh-cn#kts
 #
-google-hilt-android = 'com.google.dagger:hilt-android:2.48.1'
-google-hilt-android-compiler = 'com.google.dagger:hilt-android-compiler:2.48' # kapt
-
+hilt-android                                     = 'com.google.dagger:hilt-android:2.48.1'
+hilt-android-compiler                            = 'com.google.dagger:hilt-android-compiler:2.48' # kapt
 
 # 必备
-okhttp3-okhttp = 'com.squareup.okhttp3:okhttp:5.0.0-alpha.6'
-okhttp3-logging-interceptor= 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.2'
-retrofit-core ='com.squareup.retrofit2:retrofit:2.9.0'
-retrofit-adapter-rxjava3= 'com.squareup.retrofit2:adapter-rxjava3:2.9.0'
-retrofit-converter-gson ='com.squareup.retrofit2:converter-gson:2.9.0'
-retrofit-converter-scalars= 'com.squareup.retrofit2:converter-scalars:2.9.0'
+okhttp3-okhttp                                   = 'com.squareup.okhttp3:okhttp:5.0.0-alpha.6'
+okhttp3-logging-interceptor                      = 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.2'
+# rxjava
+rxjava3-rxandroid                                = 'io.reactivex.rxjava3:rxandroid:3.0.2'
+rxjava3-rxjava                                   = 'io.reactivex.rxjava3:rxjava:3.1.9'
+rxkotlin                                         = 'io.reactivex.rxjava3:rxkotlin:3.0.1'
+rxlifecycle-lifecycle-kotlin                     = 'com.trello.rxlifecycle4:rxlifecycle-android-lifecycle-kotlin:4.0.2'
+gson                                             = 'com.google.code.gson:gson:2.10.1'
+leakcanary-android                               = 'com.squareup.leakcanary:leakcanary-android:2.10' # debugImplementation
 
 
 
-rxkotlin = 'io.reactivex.rxjava3:rxkotlin:3.0.1'
-rxlifecycle-lifecycle-kotlin='com.trello.rxlifecycle4:rxlifecycle-android-lifecycle-kotlin:4.0.2'
-rxbinding="com.jakewharton.rxbinding4:rxbinding:4.0.0"
-rxbinding-core="com.jakewharton.rxbinding4:rxbinding-core:4.0.0"
-rxbinding-appcompat ="com.jakewharton.rxbinding4:rxbinding-appcompat:4.0.0"
-rxjava3-rxandroid = 'io.reactivex.rxjava3:rxandroid:3.0.2'
-rxjava3-rxjava = 'io.reactivex.rxjava3:rxjava:3.1.8'
+# 常用核心三方库
+banner2                                          = 'io.github.youth5201314:banner:2.2.3'
+basepopup                                        = 'io.github.razerdp:BasePopup:3.2.1'
+toaster                                          = 'com.github.getActivity:Toaster:12.3'
+wheelview                                        = 'com.github.weidongjian:androidWheelView:1.0.0'
+streamex                                         = 'one.util:streamex:0.8.1'
+avi-library                                      = 'com.wang.avi:library:2.1.3'
+flowhelper                                       = 'com.github.ethaannn:FlowHelper:v1.30'
+flycotablayout                                   = 'io.github.h07000223:flycoTabLayout:3.0.0'               # https://github.com/H07000223/FlycoTabLayout/blob/master/README_CN.md
+dsltablayout                                     = 'com.github.angcyo.DslTablayout:TabLayout:3.5.5'
+dsltablayout-delegateforviewpage2                = 'com.github.angcyo.DslTablayout:ViewPager2Delegate:3.5.5'
+#
+# viewbinding
+viewbinding-ktx                                  = 'com.github.DylanCaiCoding.ViewBindingKTX:viewbinding-ktx:2.1.0'
+
+
+# sqlite 加密驱动
+android-database-sqlcipher                       = 'net.zetetic:android-database-sqlcipher:4.4.3'
+android-oaid                                     = 'com.github.gzu-liyujiang:Android_CN_OAID:4.2.10'
+# 图片处理
+glide                                            = { module = 'com.github.bumptech.glide:glide'          , version.prefer = "4.16.0" }
+imagepicker                                      = 'com.lcw.library:imagepicker:2.2.7'
+
+# commons
+commons-io                                       = 'commons-io:commons-io:2.4'
+commons-lang                                     = 'org.apache.commons:commons-lang3:3.12.0'
+commons-compress                                 = 'org.apache.commons:commons-compress:1.12'
+
+#
+# 日志框架
+slf4j-api                                        = 'org.slf4j:slf4j-api:2.0.16'
+logback-android                                  = 'com.github.tony19:logback-android:3.0.0'
+#logback-classic                                 = 'ch.qos.logback:logback-classic:1.2.11'
+
+# 权限管理
+xxpermissions                                    = 'com.github.getActivity:XXPermissions:18.0'
+
+## 状态栏沉浸
+ultimatebarx                                     = 'com.gitee.zackratos:UltimateBarX:0.8.0'
+#adapter适配器
+# https://github.com/CymChad/BaseRecyclerViewAdapterHelper/wiki
+adapterhelper                                    = 'io.github.cymchad:BaseRecyclerViewAdapterHelper:4.0.1'
+flexibledivider                                  = 'com.github.ethaannn:RecyclerView-FlexibleDivider:1.4.1'
+
+compose-activity                                 = { module = 'androidx.activity:activity-compose'                                      , version.prefer = "1.8.2" }
+compose-material3                                = { module ='androidx.compose.material3:material3'                                     , version.prefer="1.2.1" }
+compose-ui                                       = { module = 'androidx.compose.ui:ui'                                                  , version.ref = "compose-version" }
+compose-runtime                                  = { module = 'androidx.compose.runtime:runtime'                                        , version.ref = "compose-version" }
+compose-ui-graphics                              = { module = 'androidx.compose.ui:ui-graphics'                                         , version.ref = "compose-version" }
+compose-ui-tooling-preview                       = { module = 'androidx.compose.ui:ui-tooling-preview'                                  , version.ref = 'compose-version' }
+compose-ui-test-junit4                           = { module = 'androidx.compose.ui:ui-test-junit4'                                      , version.ref = "compose-version" } # androidTestImplementation
+compose-ui-tooling                               = { module = 'androidx.compose.ui:ui-tooling'                                          , version.ref = 'compose-version' } # debugImplementation
+compose-ui-test-manifest                         = { module = 'androidx.compose.ui:ui-test-manifest'                                    , version.ref = "compose-version" } # debugImplementation
+compose-bom                                      = "androidx.compose:compose-bom:2024.04.00"
+
+#
+# lifecycle
+lifecycle-livedata                               = { module = 'androidx.lifecycle:lifecycle-livedata'                                   , version.ref = "lifecycle-version" }
+lifecycle-livedata-ktx                           = { module = 'androidx.lifecycle:lifecycle-livedata-ktx'                               , version.prefer="2.7.0"}
+lifecycle-runtime-ktx                            = { module = 'androidx.lifecycle:lifecycle-runtime-ktx'                                , version.ref = "lifecycle-version" }
+lifecycle-viewmodel                              = { module = 'androidx.lifecycle:lifecycle-viewmodel'                                  , version.ref='lifecycle-version'}
+lifecycle-viewmodel-ktx                          = { module = 'androidx.lifecycle:lifecycle-viewmodel-ktx'                              , version.ref='lifecycle-version'}
+lifecycle-extensions                             = { module = 'androidx.lifecycle:lifecycle-extensions'                                 , version.prefer ="2.2.0"}
+#
+# datastore
+datastore-preferences                            = { module='androidx.datastore:datastore-preferences'                                  , version.ref="datastore-version" }
+datastore-preferences-core                       = { module='androidx.datastore:datastore-preferences-core'                             , version.ref="datastore-version" }
+datastore-preferences-rxjava3                    = { module ='androidx.datastore:datastore-preferences-rxjava3'                         , version.ref="datastore-version" }
+#
+# navigation
+navigation-fragment-ktx                          = { module = 'androidx.navigation:navigation-fragment-ktx'                             , version.ref="navigation-version"}
+navigation-ui-ktx                                = { module='androidx.navigation:navigation-ui-ktx'                                      , version.ref="navigation-version"}
+
+
+# room
+room-compiler                                    = { module = 'androidx.room:room-compiler'                                             , version.ref = 'room-version' } # kapt
+room-ktx                                         = { module = 'androidx.room:room-ktx'                                                  , version.ref = 'room-version' }
+room-rxjava                                      = { module = 'androidx.room:room-rxjava2'                                              , version.ref = 'room-version' }
+room-runtime                                     = { module = 'androidx.room:room-runtime'                                              , version.ref = 'room-version' }
+room-guava                                       = { module = 'androidx.room:room-guava'                                                , version.ref = 'room-version' }
+room-testing                                     = { module = 'androidx.room:room-testing'                                              , version.ref = 'room-version' }
+
+#
+# retrofit
+#
+retrofit-core                                    = { module = 'com.squareup.retrofit2:retrofit'                                         , version.ref = "retrofit-version" }
+retrofit-adapter-rxjava3                         = { module = 'com.squareup.retrofit2:adapter-rxjava3'                                  , version.ref = "retrofit-version" }
+retrofit-converter-scalars                       = { module = 'com.squareup.retrofit2:converter-scalars'                                , version.ref = "retrofit-version" }
+retrofit-converter-gson                          = { module = 'com.squareup.retrofit2:converter-gson'                                   , version.ref = "retrofit-version" }
+
+
+rxbinding                                        = { module ='com.jakewharton.rxbinding4:rxbinding'                                      , version.ref ='rxbinding-version' }
+rxbinding-core                                   = { module ='com.jakewharton.rxbinding4:rxbinding-core'                                 , version.ref ='rxbinding-version' }
+rxbinding-appcompat                              = { module='com.jakewharton.rxbinding4:rxbinding-appcompat'                             , version.ref='rxbinding-version'  }
 
 #
 # koin
+koin-android                                     = { module = "io.insert-koin:koin-android"                                              , version.ref = 'koin-version' }
+koin-compat                                      = { module = "io.insert-koin:koin-android-compat"                                       , version.ref = "koin-version" }
+
 #
-koin-android = 'io.insert-koin:koin-android:3.5.0'
-koin-compat  = 'io.insert-koin:koin-android-compat:3.3.2'
-
-# viewbinding
-viewbinding-ktx = 'com.github.DylanCaiCoding.ViewBindingKTX:viewbinding-ktx:2.1.0'
-
-# 数据解析
-fastjson = 'com.alibaba:fastjson:1.2.83'
-gson = 'com.google.code.gson:gson:2.10.1'
-
-# sqlite 加密驱动
-android-database-sqlcipher= 'net.zetetic:android-database-sqlcipher:4.4.3'
-android-oaid='com.github.gzu-liyujiang:Android_CN_OAID:4.2.3'
-# 图片处理
-glide = 'com.github.bumptech.glide:glide:4.16.0'
-imagepicker = 'com.lcw.library:imagepicker:2.2.7'
-
-# commons
-commons-io = 'commons-io:commons-io:2.4'
-commons-lang = 'org.apache.commons:commons-lang3:3.12.0'
-commons-compress = 'org.apache.commons:commons-compress:1.12'
-
-
-# 日志框架
-slf4j-api = 'org.slf4j:slf4j-api:2.0.9'
-logback-android = 'com.github.tony19:logback-android:3.0.0'
-#logback-classic ='ch.qos.logback:logback-classic:1.2.11'
-
-# 权限管理
-permissions-xxpermissions = 'com.github.getActivity:XXPermissions:18.0'
-
-## 状态栏沉浸
-ultimatebarx = 'com.gitee.zackratos:UltimateBarX:0.8.0'
-
-# https://github.com/CymChad/BaseRecyclerViewAdapterHelper/wiki
-baserecyclerviewadapterhelper = 'io.github.cymchad:BaseRecyclerViewAdapterHelper:4.0.1'
-recyclerview-flexibledivider = 'com.github.ethaannn:RecyclerView-FlexibleDivider:1.4.1'
-
-############################################################################################
+# butterfly
 # https://github.com/ssseasonnn/Butterfly/blob/master/README.zh.md
-butterfly = 'com.github.ssseasonnn.Butterfly:butterfly:1.2.5'
-butterfly-compose = 'com.github.ssseasonnn.Butterfly:butterfly-compose:1.2.5'
-butterfly-compiler = 'com.github.ssseasonnn.Butterfly:compiler:1.2.5' # kapt
+butterfly                                        = { module = 'com.github.ssseasonnn.Butterfly:butterfly'                                , version.ref = 'butterfly-version' }
+butterfly-compose                                = { module = 'com.github.ssseasonnn.Butterfly:butterfly-compose'                        , version.ref = 'butterfly-version' }
+butterfly-compiler                               = { module = 'com.github.ssseasonnn.Butterfly:compiler'                                 , version.ref = 'butterfly-version' } # kapt
 
+#
 #Router
-arouter-api = 'com.alibaba:arouter-api:1.5.2'
-arouter-compiler = 'com.alibaba:arouter-compiler:1.5.2' #kapt
-#############################################################################################
+#
+arouter-api                                      = { module = 'com.alibaba:arouter-api'                                                  , version.ref = "arouter-version" }
+arouter-compiler                                 = { module = 'com.alibaba:arouter-compiler'                                             , version.ref = "arouter-version" } # kapt
+
+#
 # qmui
-qmuiteam-qmui = 'com.qmuiteam:qmui:2.1.0'
-qmuiteam-arch = 'com.qmuiteam:arch:2.1.0'
-qmuiteam-arch-compiler = 'com.qmuiteam:arch-compiler:2.0.1' # kapt
-tencent-mmkv-static = 'com.tencent:mmkv-static:1.2.14'
+#
+qmui                                             = { module = 'com.qmuiteam:qmui'                                                        , version.ref = 'qmui-version' }
+qmui-arch                                        = { module = 'com.qmuiteam:arch'                                                        , version.ref = 'qmui-version' }
+qmui-arch-compiler                               = { module = 'com.qmuiteam:arch-compiler'                                               , version.ref = 'qmui-version' }  # kapt
+mmkv                                             = { module = 'com.tencent:mmkv-static'                                                  , version.ref = 'mmkv-version' }
 
-wsmanager = 'com.rabtman.wsmanager:wsmanager:1.0.2'
-
-# other
-androidwheelview = 'com.github.weidongjian:androidWheelView:1.0.0'
-streamex = 'one.util:streamex:0.8.1'
-avi-library = 'com.wang.avi:library:2.1.3'
-
-# 友盟
-umsdk-common = 'com.umeng.umsdk:common:9.5.0'
-umsdk-asms = 'com.umeng.umsdk:asms:1.4.1'
-umsdk-apm = 'com.umeng.umsdk:apm:1.7.0'
-umsdk-abtest = 'com.umeng.umsdk:abtest:1.0.0'
-
-# 常用核心三方库
-base-popup = 'io.github.razerdp:BasePopup:3.2.1'
-toaster = 'com.github.getActivity:Toaster:12.3'
-flowhelper='com.github.ethaannn:FlowHelper:v1.30'
-
-flycotablayout='io.github.h07000223:flycoTabLayout:3.0.0' # # https://github.com/H07000223/FlycoTabLayout/blob/master/README_CN.md
-dsltablayout = 'com.github.angcyo.DslTablayout:TabLayout:3.5.5'
-dsltablayout-delegateforviewpage2 = 'com.github.angcyo.DslTablayout:ViewPager2Delegate:3.5.5'
+#
 # 下拉刷新
-refresh-kernel='com.scwang.smart:refresh-layout-kernel:2.0.3'
-refresh-header-classics='com.scwang.smart:refresh-header-classics:2.0.3'
-refresh-footer-classics='com.scwang.smart:refresh-footer-classics:2.0.3'
+#
+smart-refresh                                    = { module = 'com.scwang.smart:refresh-layout-kernel'                                   , version.ref = "smart-refresh-version" }
+smart-refresh-header-classics                    = { module = 'com.scwang.smart:refresh-header-classics'                                 , version.ref = "smart-refresh-version" }
+smart-refresh-footer-classics                    = { module = 'com.scwang.smart:refresh-footer-classics'                                 , version.ref = "smart-refresh-version" }
 
 
-banner2='io.github.youth5201314:banner:2.2.3'
-mmkv='com.tencent:mmkv-static:1.2.14'
-leakcanary-android = 'com.squareup.leakcanary:leakcanary-android:2.10' # debugImplementation
-platform-androidx-compose-bom = "androidx.compose:compose-bom:2024.04.00"
-
-legacy-support-v4 = { group = "androidx.legacy", name = "legacy-support-v4", version.ref = "legacy-support-v4" }
-ethan-kotlin-android-extension ={ group ="com.github.ethann-tech",name ="kotlin-android-extension",version.ref ="ethan-kotlin-android-extension"}
+legacy-support-v4                                = { group = "androidx.legacy"               , name = "legacy-support-v4"                , version.ref = "legacy-support-v4" }
+ethan-kotlin-android-extension                   = { group = "com.github.ethann-tech"        , name = "kotlin-android-extension"         , version.ref = "ethan-kotlin-android-extension" }
 
 
 [plugins]
-com-android-library = { id = "com.android.library", version.ref = "agp" }
-org-jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "org-jetbrains-kotlin-android" }
+application                                      = { id ="com.android.application"           , version.ref = "agp-version"}
+library                                          = { id = "com.android.library"              , version.ref = "agp-version" }
+kotlin-android                                   = { id = "org.jetbrains.kotlin.android"     , version.ref = "kotlin-android-version" }
 
 [bundles]
-koin        = ['koin-android', 'koin-compat']
-logback     = ['slf4j-api', 'logback-android']
-commons     = ['commons-io', 'commons-lang', 'commons-compress']
-qmui        = ['qmuiteam-qmui', 'qmuiteam-arch']
+navigation                                       = ['navigation-fragment-ktx', 'navigation-ui-ktx']
+lifecycle                                        = ['lifecycle-livedata', 'lifecycle-runtime-ktx', 'lifecycle-livedata-ktx', 'lifecycle-viewmodel', 'lifecycle-viewmodel-ktx', 'lifecycle-extensions']
+smartrefresh                                     = ['smart-refresh', 'smart-refresh-header-classics', 'smart-refresh-footer-classics']
+koin                                             = ['koin-android', 'koin-compat']
+logback                                          = ['slf4j-api', 'logback-android']
+commons                                          = ['commons-io', 'commons-lang', 'commons-compress']
+qmui                                             = ['qmui', 'qmui-arch']
+butterfly                                        = ['butterfly', 'butterfly-compose' ]
+datastore                                        = ['datastore-preferences', 'datastore-preferences-core', 'datastore-preferences-rxjava3']
 
-datastore   = ['androidx-datastore-preferences', 'androidx-datastore-preferences-core', 'androidx-datastore-preferences-rxjava3']
-androidx-lifecycle-group=['androidx-lifecycle-livedata','androidx-lifecycle-runtime-ktx','androidx-lifecycle-livedata-ktx','androidx-lifecycle-viewmodel','androidx-lifecycle-viewmodel-ktx','androidx-lifecycle-extensions']
-
+retrofit                                         = ['retrofit-core', 'retrofit-adapter-rxjava3', 'retrofit-converter-gson', 'retrofit-converter-scalars']
+rxbinding                                        = ['rxbinding', 'rxbinding-appcompat','rxbinding-core']

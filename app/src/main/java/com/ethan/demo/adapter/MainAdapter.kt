@@ -30,7 +30,7 @@ class MainAdapter : BaseQuickAdapter<MainItemBean, DataBindingHolder<ItemMainBin
 
     override fun onBindViewHolder(holder: DataBindingHolder<ItemMainBinding>, position: Int, item: MainItemBean?) {
         item?.let {
-            holder.binding.itemMainText.text = item.toString()
+            holder.binding.itemMainText.text = item.text
             holder.binding.layoutSides.setOpen(it.open, false)
             holder.binding.tvStick.setOnClickListener { view ->
                 Toast.makeText(view.context, item.toString(), Toast.LENGTH_SHORT).show()
